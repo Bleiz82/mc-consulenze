@@ -55,10 +55,23 @@
     .breadcrumb span{color:var(--accent);margin:0 8px}
     
     /* HERO CONTATTI */
-    .contatti-hero{padding:40px 0 60px;text-align:center}
-    .contatti-hero h1{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:16px}
-    .contatti-hero h1 span{color:var(--accent)}
-    .contatti-hero p{font-size:1.1rem;max-width:600px;margin:0 auto}
+    .contatti-hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;overflow:hidden}
+    .contatti-hero-bg{position:absolute;inset:0;z-index:0}
+    .contatti-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.25}
+    .contatti-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,26,44,.6),rgba(15,26,44,.95))}
+    .contatti-hero-content{position:relative;z-index:2;max-width:800px}
+    .contatti-hero-content h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;margin-bottom:20px;line-height:1.1}
+    .contatti-hero-content h1 span{color:var(--accent)}
+    .contatti-hero-content p{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 32px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(70,185,234,.15);border:1px solid rgba(70,185,234,.3);padding:8px 20px;border-radius:60px;font-size:.85rem;font-weight:600;color:var(--accent);margin-bottom:20px;backdrop-filter:blur(10px)}
+    .badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulsedot 2s infinite}
+    @keyframes pulsedot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+    .hero-scroll-arrow{margin-top:40px;animation:bounce-arrow 2s infinite}
+    @keyframes bounce-arrow{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,var(--accent),#3a9fd4);color:var(--deep);font-family:var(--font-heading);font-weight:700;font-size:1rem;border-radius:50px;border:none;cursor:pointer;transition:transform .4s,box-shadow .4s;text-decoration:none;text-transform:uppercase;letter-spacing:1px}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(70,185,234,.3)}
+    .btn-arrow{display:inline-block;width:20px;height:20px;transition:transform .3s}
+    .btn-primary:hover .btn-arrow{transform:translateX(4px)}
     
     /* GRID CONTATTI */
     .contatti-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:80px}
@@ -190,22 +203,31 @@
     </div>
   </header>
 
+  <!-- HERO CONTATTI -->
+  <section class="contatti-hero">
+    <div class="contatti-hero-bg">
+      <img src="img/contatti-hero.webp" alt="Contatti M&C - Parliamone insieme" width="1920" height="800" loading="eager" decoding="async">
+    </div>
+    <div class="contatti-hero-content" data-reveal>
+      <div class="hero-badge"><span class="badge-dot"></span> 📞 Primo incontro gratuito</div>
+      <h1>Parliamone <span>insieme</span></h1>
+      <p>Il primo incontro e sempre gratuito e senza impegno. Scegli come preferisci contattarci e iniziamo subito.</p>
+      <a href="#contatti" class="btn-primary">
+        Contattaci ora
+        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="hero-scroll-arrow" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
   <!-- BREADCRUMB -->
   <div class="breadcrumb">
     <div class="container">
       <a href="/">Home</a><span>›</span><strong style="color:var(--white)">Contatti</strong>
     </div>
   </div>
-
-  <!-- HERO CONTATTI -->
-  <section class="contatti-hero">
-    <div class="container">
-      <div data-reveal>
-        <h1>Parliamone <span>insieme</span></h1>
-        <p>Il primo incontro e sempre gratuito e senza impegno. Scegli come preferisci contattarci e iniziamo subito.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTATTI GRID -->
   <section class="bg-dark" style="padding:40px 0 80px;">

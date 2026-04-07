@@ -810,7 +810,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--white); 
   border-radius: var(--radius-sm);
   color: var(--white);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: border-color 0.3s;
   outline: none;
 }
@@ -1033,13 +1033,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--white); 
   border-radius: var(--radius-sm);
   color: var(--white);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   outline: none;
 }
 .newsletter-form input:focus { border-color: var(--accent); }
 .newsletter-form input::placeholder { color: rgba(178, 188, 200, 0.4); }
 .newsletter-form button {
   padding: 14px 28px;
+  min-height: 44px;
+  min-width: 44px;
   background: linear-gradient(135deg, var(--accent), #3a9fd4);
   color: var(--white);
   font-family: var(--font-heading);
