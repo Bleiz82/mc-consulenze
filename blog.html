@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog M&C | Guide Fiscali, Finanziamenti e Sicurezza sul Lavoro Sardegna</title>
+  <meta name="description" content="Articoli e guide pratiche su fiscalita, finanziamenti agevolati, sicurezza sul lavoro e consulenza aziendale per imprenditori sardi. Aggiornamenti normativi e consigli utili.">
+  <meta name="keywords" content="blog M&C, guide fiscali Sardegna, finanziamenti agevolati 2026, sicurezza sul lavoro, normativa DVR, regime forfettario">
+  <link rel="canonical" href="https://www.mcconsulenze.it/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog | M&C Elaborazioni e Consulenze">
+  <meta property="og:description" content="Articoli pratici su fisco, finanziamenti e gestione aziendale per imprenditori della Sardegna.">
+  <meta property="og:image" content="https://www.mcconsulenze.it/img/BLOG — Regime Forfettario.webp">
+  <meta property="og:url" content="https://www.mcconsulenze.it/blog.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../img/logo-mc-elaborazioni.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
+  <link rel="preload" href="js/libs/gsap.min.js" as="script">
+  <link rel="preload" href="js/libs/ScrollTrigger.min.js" as="script">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    img,video,canvas{max-width:100%;height:auto}
+    :root{--deep:#0f1a2c;--navy:#1a2744;--night:#253044;--accent:#46b9ea;--light-accent:#7dd3fc;--bg-light:#f7f8fc;--white:#ffffff;--grey:#b2bcc8;--text-dark:#3a3f4b;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--radius:16px;--shadow:0 4px 24px rgba(0,0,0,0.12);--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);color:var(--grey);background:var(--deep);line-height:1.7;overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .accent{color:var(--accent)}
+    a{color:var(--accent);text-decoration:none;transition:color var(--transition)}
+    a:hover{color:var(--light-accent)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);color:var(--white);line-height:1.2}
+
+    /* HEADER */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--deep);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4);transition:padding .3s ease}
+    .header-logo img{height:44px;width:auto;filter:drop-shadow(0 0 8px rgba(70,185,234,.3))}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{font-size:.9rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:1.5px;position:relative;padding:4px 0}
+    .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent)!important;color:var(--deep)!important;padding:10px 24px!important;border-radius:60px!important;font-weight:700!important}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{box-shadow:0 0 30px rgba(70,185,234,.4)}
+    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px;z-index:1001}
+    .hamburger span{display:block;width:28px;height:2px;background:var(--white);transition:all .3s;border-radius:2px}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:120px 0 20px;font-size:0.85rem}
+    .breadcrumb a{color:var(--grey)}
+    .breadcrumb a:hover{color:var(--accent)}
+    .breadcrumb span{color:var(--accent);margin:0 8px}
+
+    /* HERO BLOG */
+    .blog-hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;overflow:hidden}
+    .blog-hero-bg{position:absolute;inset:0;z-index:0}
+    .blog-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.25}
+    .blog-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,26,44,.6),rgba(15,26,44,.95))}
+    .blog-hero-content{position:relative;z-index:2;max-width:800px}
+    .blog-hero-content h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;margin-bottom:20px;line-height:1.1}
+    .blog-hero-content h1 span{color:var(--accent)}
+    .blog-hero-content p{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 32px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(70,185,234,.15);border:1px solid rgba(70,185,234,.3);padding:8px 20px;border-radius:60px;font-size:.85rem;font-weight:600;color:var(--accent);margin-bottom:20px;backdrop-filter:blur(10px)}
+    .badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulsedot 2s infinite}
+    @keyframes pulsedot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+    .hero-scroll-arrow{margin-top:40px;animation:bounce-arrow 2s infinite}
+    @keyframes bounce-arrow{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,var(--accent),#3a9fd4);color:var(--deep);font-family:var(--font-heading);font-weight:700;font-size:1rem;border-radius:50px;border:none;cursor:pointer;transition:transform .4s,box-shadow .4s;text-decoration:none;text-transform:uppercase;letter-spacing:1px}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(70,185,234,.3)}
+    .btn-arrow{display:inline-block;width:20px;height:20px;transition:transform .3s}
+    .btn-primary:hover .btn-arrow{transform:translateX(4px)}
+
+    /* BLOG FILTERS */
+    .blog-filters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+    .filter-btn{padding:10px 24px;background:transparent;border:1px solid rgba(70,185,234,.2);border-radius:30px;color:var(--grey);font-family:var(--font-body);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .3s}
+    .filter-btn:hover,.filter-btn.active{background:var(--accent);color:var(--deep);border-color:var(--accent)}
+
+    /* BLOG GRID */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:64px}
+    .blog-card{background:var(--night);border:1px solid rgba(70,185,234,.08);border-radius:var(--radius);overflow:hidden;transition:all .5s;display:block;text-decoration:none;color:inherit}
+    .blog-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.15)}
+    .blog-card-image{width:100%;height:220px;overflow:hidden}
+    .blog-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+    .blog-card:hover .blog-card-image img{transform:scale(1.08)}
+    .blog-card-body{padding:28px}
+    .blog-card-tag{display:inline-block;font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;background:rgba(70,185,234,.1);padding:4px 12px;border-radius:12px}
+    .blog-card-body h3{font-size:1.1rem;font-weight:700;margin-bottom:12px;line-height:1.4;color:var(--white)}
+    .blog-card-body h3:hover{color:var(--accent)}
+    .blog-card-body p{font-size:.9rem;line-height:1.7;margin-bottom:16px;color:var(--grey)}
+    .blog-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:var(--accent)}
+    .blog-card:hover .blog-card-link .link-arrow{transform:translateX(6px)}
+    .link-arrow{display:inline-block;transition:transform .3s}
+
+    /* PAGINATION */
+    .pagination{display:flex;justify-content:center;gap:8px;margin-bottom:64px}
+    .pagination a,.pagination span{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-weight:600;font-size:.9rem;transition:all .3s}
+    .pagination a{background:var(--night);border:1px solid rgba(70,185,234,.15);color:var(--grey)}
+    .pagination a:hover,.pagination a.active{background:var(--accent);color:var(--deep);border-color:var(--accent)}
+    .pagination span{color:var(--grey)}
+
+    /* NEWSLETTER */
+    .newsletter-section{padding:60px 0;background:linear-gradient(135deg,rgba(70,185,234,.08),rgba(70,185,234,.02));border:1px solid rgba(70,185,234,.15);border-radius:var(--radius);margin-bottom:64px;text-align:center}
+    .newsletter-section h3{font-size:1.5rem;margin-bottom:12px;color:var(--white)}
+    .newsletter-section h3 span{color:var(--accent)}
+    .newsletter-section p{color:var(--grey);margin-bottom:24px;font-size:.95rem}
+    .newsletter-form{display:flex;gap:12px;max-width:500px;margin:0 auto}
+    .newsletter-form input{flex:1;padding:14px 18px;background:rgba(15,26,44,.5);border:1px solid rgba(70,185,234,.15);border-radius:10px;color:var(--white);font-family:var(--font-body);font-size:.95rem;outline:none}
+    .newsletter-form input:focus{border-color:var(--accent)}
+    .newsletter-form input::placeholder{color:rgba(178,188,200,.4)}
+    .newsletter-form button{padding:14px 28px;background:linear-gradient(135deg,var(--accent),#3a9fd4);color:var(--white);font-family:var(--font-heading);font-weight:700;font-size:.9rem;border-radius:10px;border:none;cursor:pointer;transition:all .3s;white-space:nowrap}
+    .newsletter-form button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(70,185,234,.3)}
+
+    /* FOOTER */
+    .site-footer{background:var(--navy);padding:60px 0 30px;border-top:1px solid rgba(70,185,234,.08)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand p{font-size:.9rem;color:var(--grey);line-height:1.7;margin-top:16px;max-width:300px}
+    .footer-brand img{height:38px;width:auto;filter:drop-shadow(0 0 6px rgba(70,185,234,.2))}
+    .footer-col h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:20px}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col ul li a{font-size:.9rem;color:var(--grey)}
+    .footer-col ul li a:hover{color:var(--accent)}
+    .footer-social{display:flex;gap:12px;margin-top:16px}
+    .footer-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(70,185,234,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+    .footer-social a:hover{background:var(--accent);border-color:var(--accent)}
+    .footer-social a svg{width:18px;height:18px}
+    .footer-social a svg path,.footer-social a svg rect,.footer-social a svg circle{fill:none;stroke:var(--grey);stroke-width:1.5;transition:stroke .3s}
+    .footer-social a:hover svg path,.footer-social a:hover svg rect,.footer-social a:hover svg circle{stroke:var(--deep)}
+    .footer-bottom{border-top:1px solid rgba(70,185,234,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-bottom p{font-size:.8rem;color:var(--grey)}
+    .footer-bottom a{font-size:.8rem}
+
+    /* DIVIDER */
+    .section-divider{padding:0;display:flex;justify-content:center}
+    .divider-line{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5}
+
+    /* CHATBOT */
+    .chatbot-fab{position:fixed!important;bottom:24px!important;right:24px!important;left:auto!important;width:60px;height:60px;background:linear-gradient(135deg,var(--accent),#3a9fd4);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 4px 20px rgba(70,185,234,.4);transition:all .3s}
+    .chatbot-fab:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(70,185,234,.6)}
+
+    /* REVEAL */
+    [data-reveal]{opacity:0;transform:translateY(30px)}
+    .reveal-left{opacity:0;transform:translateX(-40px)}
+    .reveal-right{opacity:0;transform:translateX(40px)}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .blog-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+    }
+    @media(max-width:768px){
+      .site-header{padding:16px 20px}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,26,44,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:999}
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1.2rem}
+      .hamburger{display:flex}
+      .blog-grid{grid-template-columns:1fr}
+      .newsletter-form{flex-direction:column}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+    }
+    @media(max-width:480px){
+      .container{padding:0 16px}
+      .blog-hero h1{font-size:1.8rem}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+    }
+    .word-reveal{overflow:hidden;vertical-align:top}
+    .word-inner{will-change:transform,opacity}
+    h2 .word-reveal{margin-right:0.25em}
+    .faq-question{overflow:hidden!important;max-width:calc(100% - 60px)!important;clip-path:inset(0);word-wrap:break-word}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+      <a href="/" class="header-logo" aria-label="M&C Home">
+        <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C Elaborazioni e Consulenze Aziendali" width="160" height="50" loading="eager" fetchpriority="high" decoding="async">
+      </a>
+      <nav>
+        <ul class="nav-links" id="nav-links" role="menubar">
+          <li role="none"><a href="/" role="menuitem">Home</a></li>
+          <li role="none"><a href="/chi-siamo.html" role="menuitem">Chi Siamo</a></li>
+          <li role="none"><a href="/servizi.html" role="menuitem">Servizi</a></li>
+          <li role="none"><a href="/blog.html" role="menuitem" class="active">Blog</a></li>
+          <li role="none"><a href="/contatti.html" role="menuitem" class="nav-cta">Contattaci</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO BLOG -->
+  <section class="blog-hero">
+    <div class="blog-hero-bg">
+      <img src="img/blog-hero.webp" alt="Blog M&C - Guide e approfondimenti" width="1920" height="800" loading="eager" decoding="async">
+    </div>
+    <div class="blog-hero-content" data-reveal>
+      <div class="hero-badge"><span class="badge-dot"></span> 📰 Aggiornamenti e guide</div>
+      <h1>Il nostro <span>Blog</span></h1>
+      <p>Guide pratiche, novità fiscali e consigli per imprese e professionisti della Sardegna. Resta aggiornato con M&C.</p>
+      <a href="#articoli" class="btn-primary">
+        Leggi gli articoli
+        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="hero-scroll-arrow" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a><span>›</span><strong style="color:var(--white)">Blog</strong>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="container" id="articoli">
+    <div class="blog-filters" data-reveal>
+      <button class="filter-btn active" data-filter="all">Tutti</button>
+      <button class="filter-btn" data-filter="fiscalita">Fiscalita</button>
+      <button class="filter-btn" data-filter="finanziamenti">Finanziamenti</button>
+      <button class="filter-btn" data-filter="sicurezza">Sicurezza</button>
+      <button class="filter-btn" data-filter="contabilita">Contabilita</button>
+    </div>
+
+    <!-- BLOG GRID - ALL 6 CARDS WITH PROPER HREF LINKS -->
+    <div class="blog-grid">
+
+      <a href="/blog/regime-forfettario-2026.html" class="blog-card" data-category="fiscalita" data-reveal>
+        <div class="blog-card-image">
+          <img src="img/BLOG — Regime Forfettario.webp" alt="Regime forfettario 2026" width="400" height="220" loading="lazy" decoding="async">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Fiscalita</span>
+          <h3>Regime forfettario 2026: guida completa per professionisti sardi</h3>
+          <p>Tutto quello che devi sapere sul regime forfettario aggiornato: requisiti, limiti di fatturato, aliquote e vantaggi per chi opera in Sardegna.</p>
+          <span class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a href="/blog/bandi-sardegna-2026.html" class="blog-card" data-category="finanziamenti" data-reveal>
+        <div class="blog-card-image">
+          <img src="img/BLOG — Bandi Sardegna.webp" alt="Bandi Sardegna 2026" width="400" height="220" loading="lazy" decoding="async">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Finanziamenti</span>
+          <h3>Bandi Sardegna 2026: tutti i finanziamenti per startup e PMI</h3>
+          <p>Una panoramica aggiornata dei principali bandi regionali e nazionali a cui possono accedere le imprese sarde quest'anno.</p>
+          <span class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a href="/blog/dvr-obbligatorio-2026.html" class="blog-card" data-category="sicurezza" data-reveal>
+        <div class="blog-card-image">
+          <img src="img/BLOG — DVR Sicurezza.webp" alt="DVR Sicurezza sul lavoro" width="400" height="220" loading="lazy" decoding="async">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Sicurezza</span>
+          <h3>DVR obbligatorio: cosa rischia chi non ce l'ha aggiornato</h3>
+          <p>Il Documento di Valutazione dei Rischi e obbligatorio per tutte le imprese con dipendenti. Ecco cosa prevede la normativa e le sanzioni.</p>
+          <span class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a href="/blog/fatturazione-elettronica-2026.html" class="blog-card" data-category="contabilita" data-reveal>
+        <div class="blog-card-image">
+          <img src="img/BLOG — Regime Forfettario.webp" alt="Fatturazione elettronica 2026" width="400" height="220" loading="lazy" decoding="async">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Contabilita</span>
+          <h3>Fatturazione elettronica 2026: novita e obblighi per le imprese</h3>
+          <p>Le nuove regole sulla fatturazione elettronica entrano in vigore nel 2026. Scopri cosa cambia per la tua attivita e come adeguarti.</p>
+          <span class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a href="/blog/detrazioni-fiscali-2026.html" class="blog-card" data-category="fiscalita" data-reveal>
+        <div class="blog-card-image">
+          <img src="img/BLOG — Regime Forfettario.webp" alt="Detrazioni fiscali famiglie 2026" width="400" height="220" loading="lazy" decoding="async">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Fiscalita</span>
+          <h3>Detrazioni fiscali 2026: quali bonus sono ancora disponibili</h3>
+          <p>Bonus casa, bonus mobili, ecobonus: quali detrazioni sono state confermate per il 2026 e come accedere ai benefici fiscali.</p>
+          <span class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+      <a href="/blog/resto-al-sud-2026.html" class="blog-card" data-category="finanziamenti" data-reveal>
+        <div class="blog-card-image">
+          <img src="img/BLOG — Bandi Sardegna.webp" alt="Resto al Sud 2026" width="400" height="220" loading="lazy" decoding="async">
+        </div>
+        <div class="blog-card-body">
+          <span class="blog-card-tag">Finanziamenti</span>
+          <h3>Resto al Sud 2026: come accedere al fondo per il Mezzogiorno</h3>
+          <p>Guida pratica per accedere al fondo Rotazionale per il Mezzogiorno: requisiti, domanda, contributi a fondo perduto e finanziamenti agevolati.</p>
+          <span class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="container">
+    <div class="newsletter-section" data-reveal>
+      <h3>Rimani <span>aggiornato</span></h3>
+      <p>Iscriviti alla newsletter per ricevere aggiornamenti su novita fiscali, nuovi bandi e consigli per la tua impresa.</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="La tua email..." required>
+        <button type="submit">Iscriviti</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C" width="140" height="44" loading="lazy" decoding="async">
+          <p>Consulenza aziendale, fiscale e contabile a Senorbi per PMI, artigiani e professionisti della Trexenta e della Sardegna.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mcelaborazioni" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/mcelaborazioni" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mcelaborazioni" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="/servizi/contabilita-paghe.html">Contabilita e Paghe</a></li>
+            <li><a href="/servizi/business-plan-finanziamenti.html">Business Plan</a></li>
+            <li><a href="/servizi/sicurezza-formazione.html">Sicurezza sul Lavoro</a></li>
+            <li><a href="/servizi/consulenza-societaria.html">Consulenza Societaria</a></li>
+            <li><a href="/servizi/pratiche-suape.html">Pratiche SUAPE</a></li>
+            <li><a href="/servizi/consulenza-fiscale.html">Consulenza Fiscale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Azienda</h4>
+          <ul>
+            <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contatti.html">Contatti</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li>Via G. Brodolini 12<br>09040 Senorbi (SU)</li>
+            <li><a href="tel:+393939907903">+39 393 990 7903</a></li>
+            <li><a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024-2026 M&C Elaborazioni e Consulenze Aziendali S.r.l.s. - P.IVA 01671740916</p>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <p>Sito realizzato da <a href="https://www.digidentityagency.com" target="_blank" rel="noopener">DigIdentity Agency</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT FAB -->
+  <div id="mc-agent" data-position="bottom-right" class="chatbot-fab" role="button" aria-label="Apri assistente virtuale" tabindex="0">
+    <img src="img/chatbot-icon.webp" alt="Chat" width="36" height="36" style="width:36px;height:36px;object-fit:contain;border-radius:50%;" decoding="async" loading="lazy">
+  </div>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"CollectionPage",
+        "@id":"https://www.mcconsulenze.it/blog.html",
+        "url":"https://www.mcconsulenze.it/blog.html",
+        "name":"Blog | M&C Elaborazioni e Consulenze",
+        "description":"Articoli e guide pratiche su fiscalita, finanziamenti agevolati e sicurezza sul lavoro per imprenditori sardi.",
+        "isPartOf":{"@id":"https://www.mcconsulenze.it/#website"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.mcconsulenze.it/"},
+          {"@type":"ListItem","position":2,"name":"Blog","item":"https://www.mcconsulenze.it/blog.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- SCRIPTS -->
+  <script src="js/libs/gsap.min.js" defer></script>
+  <script src="js/libs/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    // Blog filter
+    (function(){
+      var btns = document.querySelectorAll('.filter-btn');
+      var cards = document.querySelectorAll('.blog-card');
+      btns.forEach(function(btn){
+        btn.addEventListener('click',function(){
+          btns.forEach(function(b){b.classList.remove('active');});
+          btn.classList.add('active');
+          var filter = btn.getAttribute('data-filter');
+          cards.forEach(function(card){
+            if(filter === 'all' || card.getAttribute('data-category') === filter){
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+    // Newsletter form
+    (function(){
+      var form = document.getElementById('newsletter-form');
+      if(!form) return;
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        alert('Grazie per l\'iscrizione! Riceverai i nostri aggiornamenti.');
+        form.reset();
+      });
+    })();
+  </script>
+
+</body>
+</html>

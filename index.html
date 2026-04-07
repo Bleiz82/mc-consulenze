@@ -1,0 +1,1317 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulenza Aziendale e Fiscale a Senorbi | M&C Elaborazioni e Consulenze</title>
+  <meta name="description" content="M&C Elaborazioni e Consulenze Aziendali offre consulenza aziendale, fiscale e contabile a Senorbi e nella Trexenta per PMI, artigiani, liberi professionisti e startup. Primo contatto gratuito.">
+  <link rel="canonical" href="https://www.mcconsulenze.it/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Consulenza Aziendale e Fiscale a Senorbi | M&C">
+  <meta property="og:description" content="Consulenza aziendale, fiscale e contabile a Senorbi per PMI e professionisti della Trexenta.">
+  <meta property="og:image" content="https://www.mcconsulenze.it/img/MC_marco_claudia.webp">
+  <meta property="og:url" content="https://www.mcconsulenze.it/">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/logo-mc-elaborazioni.png" type="image/png">
+  <link rel="preload" href="js/libs/gsap.min.js" as="script">
+  <link rel="preload" href="js/libs/ScrollTrigger.min.js" as="script">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ===== CRITICAL CSS ===== */
+    *,*::before,*::after{box-sizing:border-box}
+    img,video,canvas{max-width:100%;height:auto}
+    img{content-visibility:auto}
+    /* ===== RESET ===== */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{font-size:16px;scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:#0f1a2c;color:#b2bcc8;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img,video{max-width:100%;height:auto;display:block}
+    a{color:#46b9ea;text-decoration:none;transition:color .3s}
+    a:hover{color:#7dd3fc}
+    h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;color:#ffffff;line-height:1.2}
+    ::selection{background:#46b9ea;color:#0f1a2c}
+
+    /* ===== VARIABILI ===== */
+    :root{
+      --deep:#0f1a2c;--night:#253044;--accent:#46b9ea;--light-accent:#7dd3fc;
+      --glow:rgba(70,185,234,0.35);--grey:#b2bcc8;--bg-light:#f7f8fc;--white:#fff;
+      --font-b:'Inter',sans-serif;--font-h:'Poppins',sans-serif;
+      --radius:16px;--radius-sm:10px;--shadow:0 8px 32px rgba(0,0,0,.18);
+    }
+
+    /* ===== UTILITIES ===== */
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .text-center{text-align:center}
+    .mx-auto{margin-left:auto;margin-right:auto}
+
+    .section-label{
+      display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;
+      letter-spacing:3px;color:var(--accent);margin-bottom:12px;position:relative;padding-left:32px;
+    }
+    .section-label::before{
+      content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);
+      width:20px;height:2px;background:var(--accent);
+    }
+    .section-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:20px}
+    .section-title .accent{color:var(--accent)}
+    .section-subtitle{font-size:1.1rem;color:var(--grey);max-width:640px;margin-bottom:48px}
+
+    /* ===== DARK SECTION ===== */
+    .bg-dark{background:var(--deep);color:var(--grey)}
+    .bg-dark h2,.bg-dark h3{color:var(--white)}
+
+    /* ===== LIGHT SECTION ===== */
+    .bg-light{background:var(--bg-light);color:#3a3f4b}
+    .bg-light h2,.bg-light h3{color:var(--deep)}
+    .bg-light p{color:#5a6070}
+    .bg-light .section-label{color:var(--accent)}
+    .bg-light .stat-number{color:var(--accent)}
+    .bg-light .stat-label{color:#5a6070}
+
+    /* ===== BUTTONS ===== */
+    .btn-primary,.btn-hero{
+      display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);
+      font-weight:700;font-size:1rem;padding:16px 36px;border-radius:60px;cursor:pointer;
+      border:none;background:linear-gradient(135deg,var(--accent),#3a9fd4);color:var(--deep);
+      box-shadow:0 4px 20px rgba(70,185,234,.3);transition:all .4s ease;
+      text-transform:uppercase;letter-spacing:1px;position:relative;overflow:hidden;
+    }
+    .btn-primary:hover,.btn-hero:hover{
+      transform:translateY(-3px) scale(1.03);
+      box-shadow:0 8px 40px rgba(70,185,234,.5);color:var(--deep);
+    }
+    .btn-primary::after,.btn-hero::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.2) 50%,transparent 70%);
+      transform:translateX(-100%);transition:transform .6s;
+    }
+    .btn-primary:hover::after,.btn-hero:hover::after{transform:translateX(100%)}
+
+    .btn-outline{
+      display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);
+      font-weight:700;font-size:1rem;padding:16px 36px;border-radius:60px;cursor:pointer;
+      background:transparent;color:var(--accent);border:2px solid var(--accent);
+      transition:all .4s ease;text-transform:uppercase;letter-spacing:1px;
+    }
+    .btn-outline:hover{background:var(--accent);color:var(--deep);transform:translateY(-3px)}
+
+    .btn-arrow{display:inline-block;width:20px;height:20px;transition:transform .3s}
+    .btn-primary:hover .btn-arrow,.btn-hero:hover .btn-arrow{transform:translateX(4px)}
+
+    /* ===== HEADER ===== */
+    .site-header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      padding:20px 40px;display:flex;align-items:center;justify-content:space-between;
+      background:var(--deep);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+      box-shadow:0 2px 30px rgba(0,0,0,.4);transition:padding .3s ease;
+    }
+    .site-header.scrolled{
+      padding:10px 40px;
+      box-shadow:0 2px 30px rgba(0,0,0,.4);
+    }
+    .header-logo img{
+      height:44px;width:auto;
+      transition:height .3s,filter .3s;
+      filter:drop-shadow(0 0 8px rgba(70,185,234,.3));
+    }
+    .site-header.scrolled .header-logo img{height:34px}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{
+      font-size:.9rem;font-weight:600;color:var(--white);text-transform:uppercase;
+      letter-spacing:1.5px;position:relative;padding:4px 0;
+    }
+    .nav-links a::after{
+      content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;
+      background:var(--accent);transition:width .3s;
+    }
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{
+      background:var(--accent)!important;color:var(--deep)!important;
+      padding:10px 24px!important;border-radius:60px!important;font-weight:700!important;
+    }
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{box-shadow:0 0 30px var(--glow)}
+    .hamburger{
+      display:none;flex-direction:column;gap:6px;cursor:pointer;
+      background:none;border:none;padding:8px;z-index:1001;
+    }
+    .hamburger span{display:block;width:28px;height:2px;background:var(--white);transition:all .3s;border-radius:2px}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+
+    /* ===== HERO ===== */
+    .hero-wrapper{position:relative;width:100%;height:500vh}
+    .hero-sticky{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;background:#000}
+    .hero-canvas{position:absolute;top:0;left:0;width:100%;height:100%}
+    .hero-overlay{
+      position:absolute;top:0;left:0;width:100%;height:100%;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;padding:0 24px;opacity:0;transform:translateY(20px);
+      transition:opacity .8s ease,transform .8s ease;pointer-events:none;z-index:10;
+      background:radial-gradient(ellipse at center,rgba(15,26,44,.3) 0%,rgba(15,26,44,.7) 100%);
+    }
+    .hero-overlay.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+    .hero-overlay h1{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:20px;text-shadow:0 4px 40px rgba(0,0,0,.6)}
+    .hero-overlay h1 span{color:var(--accent)}
+    .hero-overlay p{font-size:clamp(1rem,2vw,1.3rem);color:rgba(255,255,255,.85);max-width:560px;margin-bottom:32px;text-shadow:0 2px 20px rgba(0,0,0,.5)}
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(70,185,234,.15);border:1px solid rgba(70,185,234,.3);
+      padding:8px 20px;border-radius:60px;font-size:.85rem;font-weight:600;
+      color:var(--accent);margin-bottom:20px;backdrop-filter:blur(10px);
+    }
+    .badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulsedot 2s infinite}
+    @keyframes pulsedot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+    .hero-scroll-hint{
+      position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+      display:flex;flex-direction:column;align-items:center;gap:8px;
+      color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:2px;
+      text-transform:uppercase;animation:bounceh 2s infinite;
+    }
+    .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent)}
+    @keyframes bounceh{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+    /* ===== TICKER ===== */
+    .ticker-bar{background:var(--accent);padding:14px 0;overflow:hidden}
+    .ticker-track{display:flex;gap:60px;animation:tickscroll 30s linear infinite;white-space:nowrap}
+    .ticker-track span{font-family:var(--font-h);font-size:.85rem;font-weight:700;color:var(--deep);text-transform:uppercase;letter-spacing:2px;flex-shrink:0}
+    .ticker-dot{width:6px;height:6px;background:var(--deep);border-radius:50%;display:inline-block;vertical-align:middle;margin:0 -24px;opacity:.4}
+    @keyframes tickscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ===== STATS ===== */
+    .stats-bar{padding:56px 0;position:relative;overflow:hidden}
+    .stats-bar::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:1px;
+      background:linear-gradient(90deg,transparent,var(--accent),transparent);
+      animation:glowline 3s ease-in-out infinite;
+    }
+    @keyframes glowline{0%,100%{opacity:.3}50%{opacity:1}}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+    .stat-item{padding:16px}
+    .stat-number{
+      font-family:var(--font-h);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;
+      color:var(--accent);line-height:1;margin-bottom:8px;transition:text-shadow .3s;
+    }
+    .stat-number.glow{text-shadow:0 0 30px var(--glow)}
+    .stat-label{font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px}
+
+    /* ===== SERVICES ===== */
+    .section-services{padding:100px 0}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .service-card{
+      background:linear-gradient(145deg,var(--night),rgba(37,48,68,.6));
+      border:1px solid rgba(70,185,234,.08);border-radius:var(--radius);
+      padding:40px 32px;position:relative;overflow:hidden;
+      transition:all .5s ease;cursor:pointer;display:block;
+      color:var(--grey);text-decoration:none;
+    }
+    .bg-light .service-card{
+      background:var(--white);
+      border:1px solid rgba(70,185,234,.12);
+      box-shadow:0 4px 24px rgba(0,0,0,.06);
+    }
+    .bg-light .service-card p{color:#5a6070}
+    .service-card::before{
+      content:'';position:absolute;top:0;left:0;width:100%;height:3px;
+      background:linear-gradient(90deg,var(--accent),var(--light-accent));
+      transform:scaleX(0);transform-origin:left;transition:transform .5s;
+    }
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-card:hover{transform:translateY(-8px);border-color:rgba(70,185,234,.2);box-shadow:0 20px 60px rgba(0,0,0,.15),0 0 40px rgba(70,185,234,.08)}
+    .service-icon{
+      width:56px;height:56px;background:rgba(70,185,234,.1);border-radius:14px;
+      display:flex;align-items:center;justify-content:center;margin-bottom:24px;
+      transition:all .3s;
+    }
+    .service-card:hover .service-icon{background:var(--accent);box-shadow:0 0 25px var(--glow)}
+    .service-card:hover .service-icon svg *{stroke:var(--deep)}
+    .service-card h3{font-size:1.25rem;font-weight:700;margin-bottom:12px}
+    .service-card p{font-size:.95rem;line-height:1.7;margin-bottom:20px}
+    .service-card-link{
+      display:inline-flex;align-items:center;gap:6px;font-size:.85rem;
+      font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;
+    }
+    .link-arrow{display:inline-block;transition:transform .3s}
+    .service-card:hover .link-arrow{transform:translateX(6px)}
+
+    /* ===== ABOUT ===== */
+    .section-about{padding:100px 0;overflow:hidden}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .about-text p{font-size:1.05rem;line-height:1.8;margin-bottom:20px}
+    .about-mini-stats{display:flex;gap:32px;margin-top:32px}
+    .about-mini-stat{text-align:center}
+    .mini-number{font-family:var(--font-h);font-size:2rem;font-weight:800;color:var(--accent)}
+    .mini-label{font-size:.8rem;text-transform:uppercase;letter-spacing:1px}
+    .bg-light .mini-label{color:#5a6070}
+    .about-visual{position:relative;display:flex;gap:20px;justify-content:center;perspective:1000px}
+    .about-float-element{
+      position:absolute;width:200px;height:200px;border-radius:50%;
+      background:radial-gradient(circle,rgba(70,185,234,.08),transparent 70%);
+      pointer-events:none;z-index:0;
+    }
+    .float-1{top:-60px;right:-40px}
+    .float-2{bottom:-80px;left:-60px}
+    .team-photo-card{
+      width:240px;height:320px;border-radius:var(--radius);overflow:hidden;
+      position:relative;box-shadow:var(--shadow);transition:transform .6s ease;
+    }
+    .team-photo-card:first-child{transform:rotate(-3deg) translateY(20px)}
+    .team-photo-card:last-child{transform:rotate(3deg) translateY(-20px)}
+    .team-photo-card:hover{transform:rotate(0) translateY(0) scale(1.03)}
+    .team-photo-placeholder{
+      width:100%;height:100%;display:flex;flex-direction:column;
+      align-items:center;justify-content:flex-end;padding-bottom:20px;position:relative;
+    }
+    .team-photo-placeholder.male{background:linear-gradient(135deg,#1a2d47,#253044)}
+    .team-photo-placeholder.female{background:linear-gradient(135deg,#1f3352,#2a4060)}
+    .team-photo-placeholder svg{position:absolute;bottom:40px;opacity:.25}
+    .team-photo-name{
+      position:relative;z-index:2;color:var(--white);font-family:var(--font-h);
+      font-weight:700;font-size:.9rem;text-align:center;
+      background:rgba(15,26,44,.7);padding:8px 16px;border-radius:8px;
+      backdrop-filter:blur(10px);
+    }
+    .team-photo-role{font-size:.75rem;color:var(--accent);font-weight:600;display:block;margin-top:2px}
+
+    /* ===== WHY ===== */
+    .section-why{padding:100px 0}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+    .why-card{
+      border:1px solid rgba(70,185,234,.06);border-radius:var(--radius);
+      padding:36px 28px;text-align:center;transition:all .5s;
+    }
+    .bg-dark .why-card{background:var(--night)}
+    .bg-light .why-card{background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+    .bg-light .why-card p{color:#5a6070}
+    .why-card:hover{transform:translateY(-6px);border-color:rgba(70,185,234,.15);box-shadow:0 16px 48px rgba(0,0,0,.12)}
+    .why-icon{
+      width:64px;height:64px;margin:0 auto 20px;background:rgba(70,185,234,.08);
+      border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;
+    }
+    .why-card:hover .why-icon{background:var(--accent);box-shadow:0 0 30px var(--glow)}
+    .why-card:hover .why-icon svg *{stroke:var(--deep)}
+    .why-card h3{font-size:1.1rem;margin-bottom:10px}
+    .why-card p{font-size:.9rem}
+
+    /* ===== METHOD ===== */
+    .section-method{padding:100px 0}
+    .method-timeline{display:flex;flex-direction:column;position:relative;max-width:700px;margin:0 auto}
+    .method-timeline::before{
+      content:'';position:absolute;left:30px;top:0;bottom:0;width:2px;
+      background:rgba(70,185,234,.15);
+    }
+    .method-progress-bar{
+      position:absolute;left:30px;top:0;width:2px;height:0;
+      background:var(--accent);box-shadow:0 0 12px var(--glow);transition:height .3s;z-index:1;
+    }
+    .method-step{display:flex;gap:32px;padding:32px 0;position:relative;opacity:0;transform:translateX(-20px);transition:all .6s ease}
+    .method-step.active{opacity:1;transform:translateX(0)}
+    .method-step-number{
+      width:60px;height:60px;min-width:60px;background:var(--deep);
+      border:2px solid rgba(70,185,234,.2);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-family:var(--font-h);font-size:1.3rem;font-weight:800;
+      color:var(--accent);z-index:2;transition:all .5s;
+    }
+    .bg-light .method-step-number{background:var(--white);border-color:rgba(70,185,234,.3)}
+    .method-step.active .method-step-number{
+      background:var(--accent);color:var(--deep);border-color:var(--accent);
+      box-shadow:0 0 25px var(--glow);
+    }
+    .method-step-content h3{font-size:1.3rem;margin-bottom:8px}
+    .method-step-content p{font-size:.95rem;line-height:1.7}
+
+    /* ===== CASES ===== */
+    .section-cases{padding:100px 0}
+    .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .case-card{
+      border:1px solid rgba(70,185,234,.08);border-radius:var(--radius);
+      padding:36px 28px;transition:all .5s;
+    }
+    .bg-dark .case-card{background:linear-gradient(145deg,var(--night),rgba(37,48,68,.5))}
+    .bg-light .case-card{background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+    .bg-light .case-card p{color:#5a6070}
+    .case-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.12)}
+    .case-result{font-family:var(--font-h);font-size:2rem;font-weight:800;color:var(--accent);margin-bottom:8px}
+    .case-card h3{font-size:1.1rem;margin-bottom:10px}
+    .case-card p{font-size:.9rem;line-height:1.7}
+
+    /* ===== TESTIMONIALS ===== */
+    .section-testimonials{padding:100px 0;overflow:hidden}
+    .testimonials-track{display:flex;gap:28px;animation:marqtest 40s linear infinite}
+    .testimonials-track:hover{animation-play-state:paused}
+    .testimonial-card{
+      min-width:380px;max-width:380px;border:1px solid rgba(70,185,234,.08);
+      border-radius:var(--radius);padding:32px;flex-shrink:0;transition:all .4s;
+    }
+    .bg-dark .testimonial-card{background:var(--deep)}
+    .bg-light .testimonial-card{background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+    .testimonial-card:hover{border-color:rgba(70,185,234,.2);box-shadow:0 16px 40px rgba(0,0,0,.12)}
+    .testimonial-stars{color:#f4c542;font-size:1rem;margin-bottom:16px;letter-spacing:2px}
+    .testimonial-card blockquote{
+      font-size:.95rem;font-style:italic;line-height:1.7;margin-bottom:20px;
+      position:relative;padding-left:20px;border-left:2px solid var(--accent);
+    }
+    .bg-light .testimonial-card blockquote{color:#5a6070}
+    .testimonial-author{display:flex;align-items:center;gap:12px}
+    .testimonial-avatar{
+      width:48px;height:48px;border-radius:50%;
+      background:linear-gradient(135deg,var(--accent),#3a9fd4);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--deep);font-family:var(--font-h);font-weight:800;font-size:1rem;
+    }
+    .testimonial-name{font-weight:700;color:var(--white);font-size:.95rem}
+    .bg-light .testimonial-name{color:var(--deep)}
+    .testimonial-role{font-size:.8rem}
+    @keyframes marqtest{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* ===== FAQ ===== */
+    .section-faq{padding:100px 0}
+    .faq-list{max-width:760px;margin:0 auto}
+    .faq-item{border-bottom:1px solid rgba(70,185,234,.1);overflow:hidden}
+    .bg-light .faq-item{border-color:rgba(70,185,234,.15)}
+    .faq-question{
+      width:100%;text-align:left;padding:24px 0;background:none;border:none;cursor:pointer;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      font-family:var(--font-h);font-size:1.05rem;font-weight:700;color:var(--white);transition:color .3s;
+    }
+    .bg-light .faq-question{color:var(--deep)}
+    .faq-question:hover{color:var(--accent)}
+    .faq-toggle{
+      width:28px;height:28px;min-width:28px;border-radius:50%;
+      border:2px solid rgba(70,185,234,.3);display:flex;align-items:center;
+      justify-content:center;transition:all .3s;position:relative;
+    }
+    .faq-toggle::before,.faq-toggle::after{content:'';position:absolute;background:var(--accent);transition:transform .3s}
+    .faq-toggle::before{width:12px;height:2px}
+    .faq-toggle::after{width:2px;height:12px}
+    .faq-item.open .faq-toggle{background:var(--accent);border-color:var(--accent)}
+    .faq-item.open .faq-toggle::before{background:var(--deep)}
+    .faq-item.open .faq-toggle::after{background:var(--deep);transform:rotate(90deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .5s ease,padding .5s}
+    .faq-item.open .faq-answer{max-height:300px;padding:0 0 24px}
+    .faq-answer p{font-size:.95rem;line-height:1.8}
+
+    /* ===== BLOG ===== */
+    .section-blog{padding:100px 0}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .blog-card{
+      border:1px solid rgba(70,185,234,.06);border-radius:var(--radius);
+      overflow:hidden;transition:all .5s;display:block;text-decoration:none;color:inherit;
+    }
+    .bg-dark .blog-card{background:var(--night)}
+    .bg-light .blog-card{background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+    .blog-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.12)}
+    .blog-card-image{width:100%;height:200px;overflow:hidden}
+    .blog-placeholder-img{
+      width:100%;height:100%;
+      background:linear-gradient(135deg,var(--deep),var(--night),rgba(70,185,234,.15));
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+      color:var(--accent);font-family:var(--font-h);font-size:.9rem;font-weight:700;
+      transition:transform .5s;
+    }
+    .blog-card:hover .blog-placeholder-img{transform:scale(1.05)}
+    .blog-placeholder-img svg{opacity:.4}
+    .blog-card-body{padding:24px}
+    .blog-card-tag{display:inline-block;font-size:.7rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+    .blog-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px;line-height:1.4}
+    .blog-card p{font-size:.9rem;line-height:1.7;margin-bottom:16px}
+    .blog-card-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:var(--accent)}
+    .blog-card:hover .blog-card-link .link-arrow{transform:translateX(6px)}
+
+    /* ===== CTA ===== */
+    .section-cta{padding:100px 0;text-align:center}
+    .cta-content{max-width:700px;margin:0 auto 60px}
+    .cta-content h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:20px}
+    .cta-content p{font-size:1.1rem;margin-bottom:32px}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .map-wrapper{
+      max-width:900px;margin:0 auto;border-radius:var(--radius);overflow:hidden;
+      border:1px solid rgba(70,185,234,.15);box-shadow:0 0 40px rgba(70,185,234,.08);position:relative;
+    }
+    .map-wrapper iframe{display:block;width:100%;height:400px;border:0;filter:invert(.9) hue-rotate(160deg) saturate(.3) brightness(1.1) contrast(1.1)}
+    .map-wrapper::after{content:'';position:absolute;inset:0;pointer-events:none;border-radius:var(--radius);box-shadow:inset 0 0 30px rgba(15,26,44,.5)}
+
+    /* ===== FOOTER ===== */
+    .site-footer{background:var(--night);padding:60px 0 30px;border-top:1px solid rgba(70,185,234,.08)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand p{font-size:.9rem;color:var(--grey);line-height:1.7;margin-top:16px;max-width:300px}
+    .footer-brand img{height:38px;width:auto;filter:drop-shadow(0 0 6px rgba(70,185,234,.2))}
+    .footer-col h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:20px}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col ul li a{font-size:.9rem;color:var(--grey)}
+    .footer-col ul li a:hover{color:var(--accent)}
+    .footer-social{display:flex;gap:12px;margin-top:16px}
+    .footer-social a{
+      width:40px;height:40px;border-radius:50%;border:1px solid rgba(70,185,234,.15);
+      display:flex;align-items:center;justify-content:center;transition:all .3s;
+    }
+    .footer-social a:hover{background:var(--accent);border-color:var(--accent)}
+    .footer-social a svg{width:18px;height:18px}
+    .footer-social a svg path,.footer-social a svg rect,.footer-social a svg circle,.footer-social a svg line{fill:none;stroke:var(--grey);stroke-width:1.5;transition:stroke .3s}
+    .footer-social a:hover svg path,.footer-social a:hover svg rect,.footer-social a:hover svg circle,.footer-social a:hover svg line{stroke:var(--deep)}
+    .footer-bottom{
+      border-top:1px solid rgba(70,185,234,.06);padding-top:24px;
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    }
+    .footer-bottom p{font-size:.8rem;color:var(--grey)}
+    .footer-bottom a{font-size:.8rem}
+
+    /* ===== CHATBOT ===== */
+    .chatbot-fab{
+      position:fixed;bottom:24px;right:24px;width:60px;height:60px;
+      background:linear-gradient(135deg,var(--accent),#3a9fd4);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;
+      box-shadow:0 4px 20px rgba(70,185,234,.4);transition:all .3s;animation:fabglow 3s ease-in-out infinite;
+    }
+    .chatbot-fab:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(70,185,234,.6)}
+    @keyframes fabglow{0%,100%{box-shadow:0 4px 20px rgba(70,185,234,.3)}50%{box-shadow:0 4px 30px rgba(70,185,234,.6)}}
+
+    /* ===== GSAP initial states ===== */
+    [data-reveal]{opacity:0;transform:translateY(30px)}
+    .reveal-left{opacity:0;transform:translateX(-40px)}
+    .reveal-right{opacity:0;transform:translateX(40px)}
+
+    /* ===== DIVIDER ===== */
+    .section-divider{padding:0;display:flex;justify-content:center}
+    .divider-line{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1024px){
+      .services-grid,.cases-grid{grid-template-columns:repeat(2,1fr)}
+      .why-grid{grid-template-columns:repeat(2,1fr)}
+      .blog-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+      .about-grid{grid-template-columns:1fr;gap:48px}
+    }
+    @media(max-width:768px){
+      .site-header{padding:16px 20px}
+      .site-header.scrolled{padding:10px 20px}
+      .nav-links{
+        display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+        background:rgba(15,26,44,.97);backdrop-filter:blur(20px);
+        flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:999;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1.2rem}
+      .hamburger{display:flex}
+      .services-grid,.why-grid,.cases-grid,.blog-grid{grid-template-columns:1fr}
+      .stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .about-visual{flex-direction:column;align-items:center}
+      .team-photo-card:first-child,.team-photo-card:last-child{transform:none}
+      .testimonial-card{min-width:300px;max-width:300px}
+      .map-wrapper iframe{height:300px}
+      .cta-buttons{flex-direction:column;align-items:center}
+    }
+    @media(max-width:480px){
+      .container{padding:0 16px}
+      .stats-grid{grid-template-columns:1fr 1fr;gap:16px}
+      .stat-number{font-size:2rem}
+      .section-services,.section-about,.section-why,.section-method,
+      .section-cases,.section-testimonials,.section-faq,.section-blog,.section-cta{padding:60px 0}
+      .team-photo-card{width:200px;height:260px}
+      .about-mini-stats{flex-direction:column;gap:16px}
+    }
+
+    .service-card{position:relative;overflow:hidden}
+    .service-card::after{
+      content:'';position:absolute;inset:-1px;border-radius:var(--radius);
+      background:linear-gradient(135deg,rgba(70,185,234,0.2),transparent,rgba(125,211,252,0.2));
+      opacity:0;transition:opacity 0.5s;z-index:-1;
+    }
+    .service-card:hover::after{opacity:1}
+    .why-card{position:relative;overflow:hidden}
+    .why-card::after{
+      content:'';position:absolute;inset:0;border-radius:var(--radius);
+      background:linear-gradient(135deg,transparent 40%,rgba(70,185,234,0.08) 50%,transparent 60%);
+      transform:translateX(-100%);transition:transform 0.8s;
+    }
+    .why-card:hover::after{transform:translateX(100%)}
+    .case-card{position:relative;overflow:hidden}
+    .case-card::after{
+      content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+      background:linear-gradient(90deg,var(--accent),var(--light-accent));
+      transform:scaleX(0);transform-origin:left;transition:transform 0.5s;
+    }
+    .case-card:hover::after{transform:scaleX(1)}
+    .blog-card-image{overflow:hidden}
+    .blog-card-image img{transition:transform 0.6s ease}
+    .blog-card:hover .blog-card-image img{transform:scale(1.08)}
+    .chatbot-fab{position:relative}
+    .chatbot-fab::before{
+      content:'';position:absolute;inset:-6px;border-radius:50%;
+      border:2px solid rgba(70,185,234,0.4);animation:fab-ring 2s ease-out infinite;
+    }
+    @keyframes fab-ring{0%{transform:scale(1);opacity:1}100%{transform:scale(1.5);opacity:0}}
+    .map-wrapper{border:1px solid rgba(70,185,234,0.25);box-shadow:0 0 40px rgba(70,185,234,0.1),inset 0 0 30px rgba(15,26,44,0.5)}
+    .map-wrapper:hover{border-color:rgba(70,185,234,0.5);box-shadow:0 0 80px rgba(70,185,234,0.2),inset 0 0 30px rgba(15,26,44,0.5)}
+    .map-wrapper::before{content:'';position:absolute;inset:-2px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(70,185,234,0.3),transparent 40%,transparent 60%,rgba(70,185,234,0.3));z-index:1;pointer-events:none;opacity:0.6}
+    .section-innovation .about-visual img{transition:transform 0.5s ease,box-shadow 0.5s ease}
+    .section-innovation .about-visual img:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 16px 48px rgba(70,185,234,0.2)}
+    .about-text strong{transition:color 0.6s,text-shadow 0.6s}
+    .stat-number{position:relative}
+    .faq-item{transition:background 0.3s}
+    .faq-item:hover{background:rgba(70,185,234,0.03)}
+    .bg-light .faq-item:hover{background:rgba(70,185,234,0.05)}
+    .footer-col ul li a{position:relative}
+    .footer-col ul li a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--accent);transition:width 0.3s}
+    .footer-col ul li a:hover::after{width:100%}
+    .ticker-bar{position:relative;overflow:hidden}
+    .ticker-bar::before{content:'';position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(90deg,#46b9ea,transparent);z-index:2;pointer-events:none}
+    .ticker-bar::after{content:'';position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(-90deg,#46b9ea,transparent);z-index:2;pointer-events:none}
+    .chatbot-fab{position:fixed!important;bottom:24px!important;right:24px!important;left:auto!important}
+    @keyframes float-bot{0%,100%{transform:translateY(40px)}50%{transform:translateY(28px)}}
+    .word-reveal{overflow:hidden;vertical-align:top}
+    .word-inner{will-change:transform,opacity}
+    h2 .word-reveal{margin-right:0.25em}
+    .service-row-features li{will-change:transform,opacity}
+    @media(prefers-reduced-motion:reduce){
+      .word-inner,.service-row-features li,.btn-primary,.btn-hero,.btn-outline{
+        opacity:1!important;transform:none!important;
+      }
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+    }
+    .chatbot-fab::before{will-change:transform,opacity}
+    #scroll-progress{will-change:width}
+    #cursor-follower{will-change:left,top,width,height}
+    canvas{will-change:auto}
+  .faq-question{overflow:hidden;text-overflow:ellipsis;white-space:normal;position:relative;z-index:2}
+.faq-question span.word-reveal{display:inline!important}
+.faq-question span.word-inner{display:inline!important;transform:none!important;opacity:1!important}
+.faq-question .word-reveal+.word-reveal{margin-left:0}
+.faq-item{position:relative;overflow:hidden!important}.faq-question{overflow:hidden!important}.faq-item *{max-width:100%}
+#faq{position:relative;overflow:hidden}#faq .faq-item{overflow:hidden;clip-path:inset(0)}#faq .faq-question{overflow:hidden;clip-path:inset(0)}
+.faq-question{overflow:hidden!important;max-width:calc(100% - 60px)!important;word-wrap:break-word}
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <a href="/" class="header-logo" aria-label="M&C Home">
+      <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C Elaborazioni e Consulenze Aziendali" width="160" height="50" loading="eager" fetchpriority="high" decoding="async">
+    </a>
+    <nav>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="/" role="menuitem" class="active">Home</a></li>
+        <li role="none"><a href="/chi-siamo.html" role="menuitem">Chi Siamo</a></li>
+        <li role="none"><a href="/servizi.html" role="menuitem">Servizi</a></li>
+        <li role="none"><a href="/blog.html" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/contatti.html" role="menuitem" class="nav-cta">Contattaci</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-wrapper" id="hero">
+    <div class="hero-sticky">
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-overlay" id="hero-overlay">
+        <div class="hero-badge"><span class="badge-dot"></span> Primo contatto gratuito</div>
+        <h1>Il tuo business.<br><span>La nostra direzione.</span></h1>
+        <p>Consulenza aziendale e fiscale a Senorbi per imprese che vogliono crescere nella Trexenta e in tutta la Sardegna.</p>
+        <a href="/contatti.html" class="btn-hero">
+          Prenota una consulenza gratuita
+          <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true"><span>Scorri</span><div class="scroll-line"></div></div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-bar" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Contabilita e Paghe</span><span class="ticker-dot"></span>
+      <span>Business Plan</span><span class="ticker-dot"></span>
+      <span>Finanziamenti Agevolati</span><span class="ticker-dot"></span>
+      <span>Sicurezza sul Lavoro</span><span class="ticker-dot"></span>
+      <span>Consulenza Societaria</span><span class="ticker-dot"></span>
+      <span>Pratiche SUAPE</span><span class="ticker-dot"></span>
+      <span>Consulenza Fiscale</span><span class="ticker-dot"></span>
+      <span>Formazione</span><span class="ticker-dot"></span>
+      <span>Contabilita e Paghe</span><span class="ticker-dot"></span>
+      <span>Business Plan</span><span class="ticker-dot"></span>
+      <span>Finanziamenti Agevolati</span><span class="ticker-dot"></span>
+      <span>Sicurezza sul Lavoro</span><span class="ticker-dot"></span>
+      <span>Consulenza Societaria</span><span class="ticker-dot"></span>
+      <span>Pratiche SUAPE</span><span class="ticker-dot"></span>
+      <span>Consulenza Fiscale</span><span class="ticker-dot"></span>
+      <span>Formazione</span><span class="ticker-dot"></span>
+    </div>
+  </div>
+
+  <!-- STATS — sfondo chiaro -->
+  <section class="stats-bar bg-light" id="stats" aria-label="Numeri in evidenza">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-target="97" data-suffix="%">0</div>
+          <div class="stat-label">Clienti Soddisfatti</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="stat-label">Pratiche Gestite</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="5" data-suffix="">0</div>
+          <div class="stat-label">Professionisti</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="10" data-suffix="+">0</div>
+          <div class="stat-label">Anni di Esperienza</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI — sfondo scuro -->
+  <section class="section-services bg-dark" id="servizi">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">I Nostri Servizi</span>
+        <h2 class="section-title">Soluzioni <span class="accent">su misura</span> per la tua impresa</h2>
+        <p class="section-subtitle mx-auto">Dalla contabilita alla consulenza strategica: un team multidisciplinare al tuo fianco per ogni esigenza aziendale.</p>
+      </div>
+      <div class="services-grid">
+        <a href="/servizi/contabilita-paghe.html" class="service-card">
+          <img src="img/SERVIZI — Contabilita e Paghe.webp" alt="Contabilita e Paghe" width="100" height="100" loading="lazy" decoding="async" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 9h20"/><path d="M9 21V9"/><path d="M13 13h4"/><path d="M13 17h4"/></svg>
+          </div>
+          <h3>Contabilita e Paghe</h3>
+          <p>Gestione contabile ordinaria e semplificata, elaborazione buste paga, adempimenti fiscali periodici e dichiarazioni annuali.</p>
+          <span class="service-card-link">Scopri di piu <span class="link-arrow">&rarr;</span></span>
+        </a>
+        <a href="/servizi/business-plan-finanziamenti.html" class="service-card">
+          <img src="img/SERVIZI — Business Plan e Finanziamenti.webp" alt="Business Plan e Finanziamenti" width="100" height="100" loading="lazy" decoding="async" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Business Plan e Finanziamenti</h3>
+          <p>Redazione di business plan professionali e assistenza completa per bandi regionali, nazionali e fondi europei.</p>
+          <span class="service-card-link">Scopri di piu <span class="link-arrow">&rarr;</span></span>
+        </a>
+        <a href="/servizi/sicurezza-formazione.html" class="service-card">
+          <img src="img/SERVIZI — Sicurezza sul Lavoro.webp" alt="Sicurezza sul Lavoro" width="100" height="100" loading="lazy" decoding="async" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Sicurezza sul Lavoro</h3>
+          <p>Redazione DVR, corsi HACCP, formazione obbligatoria per lavoratori e datori di lavoro, aggiornamenti normativi.</p>
+          <span class="service-card-link">Scopri di piu <span class="link-arrow">&rarr;</span></span>
+        </a>
+        <a href="/servizi/consulenza-societaria.html" class="service-card">
+          <img src="img/SERVIZI — Consulenza Societaria.webp" alt="Consulenza Societaria" width="100" height="100" loading="lazy" decoding="async" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Consulenza Societaria</h3>
+          <p>Costituzione societa, redazione statuti, operazioni straordinarie, fusioni, trasformazioni e cessioni di quote.</p>
+          <span class="service-card-link">Scopri di piu <span class="link-arrow">&rarr;</span></span>
+        </a>
+        <a href="/servizi/pratiche-suape.html" class="service-card">
+          <img src="img/SERVIZI — Pratiche SUAPE.webp" alt="Pratiche SUAPE" width="100" height="100" loading="lazy" decoding="async" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Pratiche SUAPE</h3>
+          <p>Supporto completo per apertura, modifica, subingresso e cessazione attivita tramite Sportello Unico.</p>
+          <span class="service-card-link">Scopri di piu <span class="link-arrow">&rarr;</span></span>
+        </a>
+        <a href="/servizi/consulenza-fiscale.html" class="service-card">
+          <img src="img/SERVIZI — Consulenza Fiscale.webp" alt="Consulenza Fiscale" width="100" height="100" loading="lazy" decoding="async" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <h3>Consulenza Fiscale e Strategica</h3>
+          <p>Pianificazione fiscale, ottimizzazione del carico tributario, analisi di bilancio e strategie di crescita.</p>
+          <span class="service-card-link">Scopri di piu <span class="link-arrow">&rarr;</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-line"></div></div>
+
+  <!-- CHI SIAMO — sfondo chiaro -->
+  <section class="section-about bg-light" id="chi-siamo">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label reveal-left">Chi Siamo</span>
+          <h2 class="section-title reveal-left">Due professionisti,<br><span class="accent">una visione comune</span></h2>
+          <p class="reveal-left">M&C Elaborazioni e Consulenze Aziendali nasce nel 2024 dall'unione di competenze complementari di <strong>Marco Pala</strong> e <strong>Claudia Cancedda</strong>. Con sede operativa a Senorbi, nel cuore della Trexenta, il nostro studio offre un servizio completo e personalizzato a PMI, artigiani, liberi professionisti e startup di tutta la Sardegna.</p>
+          <p class="reveal-left">La nostra missione e semplice: trasformare la complessita burocratica e fiscale in un vantaggio competitivo per i nostri clienti. Non siamo semplici consulenti, siamo partner strategici che crescono insieme alla tua impresa.</p>
+          <div class="about-mini-stats reveal-left">
+            <div class="about-mini-stat">
+              <div class="mini-number">15+</div>
+              <div class="mini-label">Anni esperienza cumulata</div>
+            </div>
+            <div class="about-mini-stat">
+              <div class="mini-number">5</div>
+              <div class="mini-label">Professionisti nel team</div>
+            </div>
+            <div class="about-mini-stat">
+              <div class="mini-number">500+</div>
+              <div class="mini-label">Pratiche completate</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="about-float-element float-1"></div>
+          <div class="about-float-element float-2"></div>
+          <div class="team-photo-card">
+            <img src="img/MC_marco.webp" alt="Marco Pala - Founder e Amministratore M&C" width="240" height="320" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+            <div class="team-photo-name">Marco Pala<span class="team-photo-role">Founder &amp; Amministratore</span></div>
+          </div>
+          <div class="team-photo-card">
+            <img src="img/MC_claudia.webp" alt="Claudia Cancedda - Co-Founder M&C" width="240" height="320" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+            <div class="team-photo-name">Claudia Cancedda<span class="team-photo-role">Co-Founder &amp; Consulente</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCHE SCEGLIERCI — sfondo scuro -->
+  <section class="section-why bg-dark" id="perche">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">Perche Sceglierci</span>
+        <h2 class="section-title">Quattro motivi per <span class="accent">affidarti a noi</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Assistenza Personalizzata</h3>
+          <p>Ogni cliente ha esigenze uniche. Costruiamo percorsi di consulenza tagliati su misura, non pacchetti standard.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Risparmio di Tempo</h3>
+          <p>Ci occupiamo noi della burocrazia, delle scadenze e degli adempimenti. Tu ti concentri sul tuo business.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Team Multidisciplinare</h3>
+          <p>Cinque professionisti con competenze complementari: contabilita, fiscalita, diritto societario, sicurezza e finanza agevolata.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Radicati nel Territorio</h3>
+          <p>Conosciamo la Trexenta, le sue imprese e le opportunita locali. La vicinanza geografica e relazionale fa la differenza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-line"></div></div>
+
+  <!-- METODO — sfondo chiaro -->
+  <section class="section-method bg-light" id="metodo">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">Il Nostro Metodo</span>
+        <h2 class="section-title">Tre passi verso il <span class="accent">risultato</span></h2>
+        <p class="section-subtitle mx-auto">Un approccio strutturato e trasparente che mette al centro le tue esigenze reali.</p>
+      </div>
+      <div class="method-timeline">
+        <div class="method-progress-bar"></div>
+        <div class="method-step">
+          <div class="method-step-number">01</div>
+          <div class="method-step-content">
+            <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+              <img src="img/metodo-ascoltiamo.webp" alt="Ascoltiamo le tue esigenze" width="120" height="120" loading="lazy" decoding="async" style="width:120px;height:120px;object-fit:contain;border-radius:12px;flex-shrink:0;">
+              <div style="flex:1;min-width:200px;">
+                <h3>Ascoltiamo</h3>
+                <p>Il primo incontro e gratuito e senza impegno. Analizziamo la tua situazione, i tuoi obiettivi e le criticita attuali. Ogni dettaglio conta per costruire la strategia giusta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">02</div>
+          <div class="method-step-content">
+            <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+              <img src="img/metodo-analizziamo.webp" alt="Analizziamo la situazione" width="120" height="120" loading="lazy" decoding="async" style="width:120px;height:120px;object-fit:contain;border-radius:12px;flex-shrink:0;">
+              <div style="flex:1;min-width:200px;">
+                <h3>Analizziamo</h3>
+                <p>Studiamo a fondo la documentazione, il regime fiscale, la struttura societaria e le opportunita di finanziamento. Identifichiamo margini di miglioramento concreti e misurabili.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="method-step">
+          <div class="method-step-number">03</div>
+          <div class="method-step-content">
+            <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+              <img src="img/metodo-risolviamo.webp" alt="Risolviamo con soluzioni su misura" width="120" height="120" loading="lazy" decoding="async" style="width:120px;height:120px;object-fit:contain;border-radius:12px;flex-shrink:0;">
+              <div style="flex:1;min-width:200px;">
+                <h3>Risolviamo</h3>
+                <p>Implementiamo soluzioni su misura con tempi certi. Monitoriamo i risultati e adattiamo la strategia nel tempo. Il nostro obiettivo e il tuo successo duraturo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASI STUDIO — sfondo scuro -->
+  <section class="section-cases bg-dark" id="case-study">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">Risultati Concreti</span>
+        <h2 class="section-title">Storie di <span class="accent">successo reale</span></h2>
+        <p class="section-subtitle mx-auto">Non numeri astratti, ma risultati tangibili ottenuti per imprese come la tua nella Trexenta e in Sardegna.</p>
+      </div>
+      <div class="cases-grid">
+        <div class="case-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <img src="img/casi-fiscale.webp" alt="Riduzione carico fiscale" width="200" height="140" loading="lazy" decoding="async" style="width:100%;max-width:200px;height:auto;object-fit:contain;border-radius:12px;margin-bottom:20px;">
+          <div class="case-result">-15%</div>
+          <h3>Carico fiscale ottimizzato</h3>
+          <p>Un artigiano di Senorbi si e rivolto a noi perche il peso fiscale stava soffocando la sua attivita. Dopo un'analisi approfondita abbiamo riorganizzato il regime tributario, riducendo il carico del 15% in un solo anno e liberando risorse per nuovi investimenti.</p>
+        </div>
+        <div class="case-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <img src="img/casi-finanziamento.webp" alt="Finanziamento regionale ottenuto" width="200" height="140" loading="lazy" decoding="async" style="width:100%;max-width:200px;height:auto;object-fit:contain;border-radius:12px;margin-bottom:20px;">
+          <div class="case-result">&euro;50.000</div>
+          <h3>Startup finanziata dalla Regione</h3>
+          <p>Una startup innovativa della Trexenta aveva un'idea brillante ma nessuna esperienza con i bandi pubblici. Abbiamo redatto un business plan dettagliato e gestito l'intera pratica, ottenendo un finanziamento regionale di 50.000 euro.</p>
+        </div>
+        <div class="case-card" style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <img src="img/casi-contributo.webp" alt="Contributo a fondo perduto" width="200" height="140" loading="lazy" decoding="async" style="width:100%;max-width:200px;height:auto;object-fit:contain;border-radius:12px;margin-bottom:20px;">
+          <div class="case-result">&euro;175.000</div>
+          <h3>Contributo a fondo perduto record</h3>
+          <p>Una startup tecnologica ci ha affidato la candidatura a un bando nazionale. Grazie alla nostra esperienza nella finanza agevolata, abbiamo ottenuto un contributo a fondo perduto di 175.000 euro, il piu alto mai gestito dal nostro studio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-line"></div></div>
+
+  <section class="section-innovation bg-light" id="innovazione" style="padding:100px 0;">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label reveal-left">Innovazione</span>
+          <h2 class="section-title reveal-left">Non il solito studio.<br><span class="accent">Siamo il futuro</span> della consulenza.</h2>
+          <p class="reveal-left">Mentre altri studi usano ancora faldoni di carta e fogli Excel, noi investiamo in tecnologia per offrirti un servizio piu veloce, preciso e trasparente. Il nostro sito web, realizzato da <a href="https://www.digidentityagency.com" target="_blank" rel="noopener" style="color:#46b9ea;font-weight:700;">DigIdentity Agency</a>, e un esempio concreto: un'esperienza digitale premium che riflette come lavoriamo ogni giorno.</p>
+          <p class="reveal-left">Il nostro approccio unisce competenza tradizionale e strumenti digitali avanzati. Mentre ti seguiamo con la cura e l'attenzione di sempre, dietro le quinte lavoriamo con tecnologie che rendono tutto piu veloce, trasparente e accessibile. Il risultato? Meno attese, meno carta, piu controllo sulla tua impresa.</p>
+        </div>
+<div class="about-visual reveal-right" style="display:flex;align-items:flex-end;justify-content:center;">
+  <img src="img/chatbot-ai.webp" alt="Assistente AI M&C" width="400" height="400" loading="lazy" decoding="async" style="width:100%;max-width:400px;height:auto;filter:drop-shadow(0 20px 40px rgba(70,185,234,0.3));transform:translateY(40px);animation:float-bot 3s ease-in-out infinite;">
+</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-line"></div></div>
+
+  <!-- TESTIMONIAL — sfondo scuro -->
+  <section class="section-testimonials bg-dark" id="testimonial" style="padding:100px 0;overflow:hidden;">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">Testimonianze</span>
+        <h2 class="section-title">Cosa dicono i <span class="accent">nostri clienti</span></h2>
+        <p class="section-subtitle mx-auto">Le parole di chi ha scelto di affidarsi a noi parlano piu di qualsiasi brochure.</p>
+      </div>
+    </div>
+    <div class="testimonials-track">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Mi sono rivolto a Marco quando la mia contabilita era un disastro. In pochi mesi ha riorganizzato tutto, implementato la fatturazione digitale e ridotto i miei costi amministrativi del 30%. Finalmente posso concentrarmi solo sul mio lavoro.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">DZ</div><div><div class="testimonial-name">Davide Zedda</div><div class="testimonial-role">Imprenditore Edile, Senorbi</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Dovevo aprire un ristorante e le pratiche SUAPE mi sembravano un labirinto infinito. Il team di M&amp;C ha gestito ogni singolo documento, ogni autorizzazione, ogni scadenza. Ho aperto nei tempi previsti senza un solo intoppo.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">MF</div><div><div class="testimonial-name">Matteo Falchi</div><div class="testimonial-role">Ristoratore, Suelli</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Avevo un'idea imprenditoriale ma zero esperienza con bandi e finanziamenti. M&amp;C ha preparato un business plan impeccabile e mi ha guidato passo dopo passo. Risultato: 175.000 euro di contributo a fondo perduto.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">GC</div><div><div class="testimonial-name">Gianluca Cancedda</div><div class="testimonial-role">Founder Startup Tech, Cagliari</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Cercavo qualcuno che mi aiutasse a capire quale forma societaria fosse la migliore per la mia attivita. Marco e Claudia mi hanno spiegato tutto con chiarezza, senza tecnicismi inutili. Oggi la mia SRL e operativa e in crescita.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">AP</div><div><div class="testimonial-name">Alessandro Porcu</div><div class="testimonial-role">Titolare SRL, Guasila</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>La sicurezza sul lavoro era un aspetto che avevo sempre trascurato. M&amp;C ha redatto il DVR, organizzato i corsi HACCP per il mio staff e messo tutto in regola. Ora lavoro sereno sapendo di essere a norma.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">SM</div><div><div class="testimonial-name">Sara Melis</div><div class="testimonial-role">Titolare Bar, Senorbi</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Gestisco un'azienda agricola e la burocrazia mi portava via piu tempo del lavoro nei campi. Da quando M&amp;C gestisce la mia contabilita e le pratiche, ho recuperato almeno due giorni a settimana. Consigliatissimi.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">RC</div><div><div class="testimonial-name">Roberto Cossu</div><div class="testimonial-role">Imprenditore Agricolo, Ortacesus</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Avevo bisogno di ristrutturare il debito fiscale della mia impresa. Marco ha trovato una soluzione che mi ha fatto risparmiare oltre 8.000 euro l'anno. Competenza e disponibilita fuori dal comune.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">FL</div><div><div class="testimonial-name">Francesco Loi</div><div class="testimonial-role">Artigiano, Barrali</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Come libera professionista avevo bisogno di ottimizzare il mio regime fiscale. Claudia mi ha seguita con pazienza e professionalita, trovando deduzioni che il mio vecchio commercialista ignorava. Risparmio concreto dal primo anno.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">MO</div><div><div class="testimonial-name">Monica Orru</div><div class="testimonial-role">Architetto, Senorbi</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Ho aperto la mia startup grazie al supporto completo di M&amp;C: dalla costituzione della societa al business plan, fino all'ottenimento di un finanziamento Resto al Sud. Un team che ti prende per mano e non ti lascia mai solo.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">LP</div><div><div class="testimonial-name">Luca Piras</div><div class="testimonial-role">Founder Startup, Dolianova</div></div></div>
+      </div>
+      <!-- duplicates for infinite marquee -->
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Mi sono rivolto a Marco quando la mia contabilita era un disastro. In pochi mesi ha riorganizzato tutto, implementato la fatturazione digitale e ridotto i miei costi amministrativi del 30%. Finalmente posso concentrarmi solo sul mio lavoro.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">DZ</div><div><div class="testimonial-name">Davide Zedda</div><div class="testimonial-role">Imprenditore Edile, Senorbi</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Dovevo aprire un ristorante e le pratiche SUAPE mi sembravano un labirinto infinito. Il team di M&amp;C ha gestito ogni singolo documento, ogni autorizzazione, ogni scadenza. Ho aperto nei tempi previsti senza un solo intoppo.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">MF</div><div><div class="testimonial-name">Matteo Falchi</div><div class="testimonial-role">Ristoratore, Suelli</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Avevo un'idea imprenditoriale ma zero esperienza con bandi e finanziamenti. M&amp;C ha preparato un business plan impeccabile e mi ha guidato passo dopo passo. Risultato: 175.000 euro di contributo a fondo perduto.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">GC</div><div><div class="testimonial-name">Gianluca Cancedda</div><div class="testimonial-role">Founder Startup Tech, Cagliari</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Cercavo qualcuno che mi aiutasse a capire quale forma societaria fosse la migliore per la mia attivita. Marco e Claudia mi hanno spiegato tutto con chiarezza, senza tecnicismi inutili. Oggi la mia SRL e operativa e in crescita.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">AP</div><div><div class="testimonial-name">Alessandro Porcu</div><div class="testimonial-role">Titolare SRL, Guasila</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>La sicurezza sul lavoro era un aspetto che avevo sempre trascurato. M&amp;C ha redatto il DVR, organizzato i corsi HACCP per il mio staff e messo tutto in regola. Ora lavoro sereno sapendo di essere a norma.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">SM</div><div><div class="testimonial-name">Sara Melis</div><div class="testimonial-role">Titolare Bar, Senorbi</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Gestisco un'azienda agricola e la burocrazia mi portava via piu tempo del lavoro nei campi. Da quando M&amp;C gestisce la mia contabilita e le pratiche, ho recuperato almeno due giorni a settimana. Consigliatissimi.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">RC</div><div><div class="testimonial-name">Roberto Cossu</div><div class="testimonial-role">Imprenditore Agricolo, Ortacesus</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Avevo bisogno di ristrutturare il debito fiscale della mia impresa. Marco ha trovato una soluzione che mi ha fatto risparmiare oltre 8.000 euro l'anno. Competenza e disponibilita fuori dal comune.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">FL</div><div><div class="testimonial-name">Francesco Loi</div><div class="testimonial-role">Artigiano, Barrali</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Come libera professionista avevo bisogno di ottimizzare il mio regime fiscale. Claudia mi ha seguita con pazienza e professionalita, trovando deduzioni che il mio vecchio commercialista ignorava. Risparmio concreto dal primo anno.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">MO</div><div><div class="testimonial-name">Monica Orru</div><div class="testimonial-role">Architetto, Senorbi</div></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>Ho aperto la mia startup grazie al supporto completo di M&amp;C: dalla costituzione della societa al business plan, fino all'ottenimento di un finanziamento Resto al Sud. Un team che ti prende per mano e non ti lascia mai solo.</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar">LP</div><div><div class="testimonial-name">Luca Piras</div><div class="testimonial-role">Founder Startup, Dolianova</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ — sfondo scuro -->
+  <section class="section-faq bg-dark" id="faq">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">Domande Frequenti</span>
+        <h2 class="section-title">Hai qualche <span class="accent">dubbio?</span></h2>
+        <p class="section-subtitle mx-auto">Ecco le risposte alle domande che ci vengono poste piu spesso dai nostri clienti.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            A chi vi rivolgete?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Ci rivolgiamo a PMI, artigiani, liberi professionisti, startup e imprese di ogni dimensione operative nella Trexenta e in tutta la Sardegna. Il nostro approccio personalizzato si adatta alle esigenze di ciascun cliente.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Offrite un servizio di contabilita completo?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Si, gestiamo contabilita ordinaria e semplificata, elaborazione buste paga, dichiarazioni fiscali, bilanci, F24, comunicazioni periodiche e tutti gli adempimenti connessi. Un servizio chiavi in mano.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Potete aiutarmi ad aprire una nuova attivita?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Assolutamente si. Ti assistiamo dalla scelta della forma giuridica alla costituzione societaria, dalle pratiche SUAPE alla partita IVA, fino alla ricerca di finanziamenti agevolati per il tuo progetto imprenditoriale.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Mi aiutate a trovare finanziamenti e contributi?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>Si, monitoriamo costantemente bandi regionali, nazionali e europei. Redigiamo business plan professionali e gestiamo l'intera pratica di richiesta, dalla candidatura alla rendicontazione finale.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Il primo incontro e a pagamento?
+            <span class="faq-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <p>No, il primo incontro conoscitivo e sempre gratuito e senza impegno. Serve a noi per capire le tue esigenze e a te per valutare se siamo il partner giusto per la tua impresa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG — sfondo chiaro -->
+  <section class="section-blog bg-light" id="blog-preview">
+    <div class="container">
+      <div class="text-center" data-reveal>
+        <span class="section-label">Dal Nostro Blog</span>
+        <h2 class="section-title">Guide e <span class="accent">approfondimenti</span></h2>
+        <p class="section-subtitle mx-auto">Articoli pratici su fisco, finanziamenti e gestione aziendale per imprenditori della Sardegna.</p>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img src="img/BLOG — Regime Forfettario.webp" alt="Regime forfettario 2026" width="400" height="200" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-tag">Fiscalita</span>
+            <h3>Regime forfettario 2026: guida completa per professionisti sardi</h3>
+            <p>Tutto quello che devi sapere sul regime forfettario aggiornato: requisiti, limiti di fatturato, aliquote e vantaggi per chi opera in Sardegna.</p>
+            <a href="/blog/regime-forfettario-2026.html" class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img src="img/BLOG — Bandi Sardegna.webp" alt="Bandi Sardegna 2026" width="400" height="200" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-tag">Finanziamenti</span>
+            <h3>Bandi Sardegna 2026: tutti i finanziamenti per startup e PMI</h3>
+            <p>Una panoramica aggiornata dei principali bandi regionali e nazionali a cui possono accedere le imprese sarde quest'anno.</p>
+            <a href="/blog/bandi-sardegna-2026.html" class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-image">
+            <img src="img/BLOG — DVR Sicurezza.webp" alt="DVR Sicurezza sul lavoro" width="400" height="200" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-card-tag">Sicurezza</span>
+            <h3>DVR obbligatorio: cosa rischia chi non ce l'ha aggiornato</h3>
+            <p>Il Documento di Valutazione dei Rischi e obbligatorio per tutte le imprese con dipendenti. Ecco cosa prevede la normativa e le sanzioni.</p>
+            <a href="/blog/dvr-obbligatorio-2026.html" class="blog-card-link">Leggi l'articolo <span class="link-arrow">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+      <div class="text-center" style="margin-top:48px" data-reveal>
+        <a href="/blog.html" class="btn-outline">
+          Tutti gli articoli
+          <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + MAPPA — sfondo scuro -->
+  <section class="section-cta bg-dark" id="cta-finale">
+    <div class="container">
+      <div class="cta-content" data-reveal>
+        <span class="section-label">Inizia Ora</span>
+        <h2 class="section-title">Pronto a far crescere<br><span class="accent">la tua impresa?</span></h2>
+        <p>Il primo incontro e gratuito e senza impegno. Raccontaci il tuo progetto e scopri cosa possiamo fare insieme per il tuo business.</p>
+        <div class="cta-buttons">
+          <a href="/contatti.html" class="btn-primary">
+            Prenota una consulenza
+            <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="tel:+393939907903" class="btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Chiama ora
+          </a>
+        </div>
+      </div>
+      <div class="map-wrapper" data-reveal>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3091.8!2d9.1297!3d39.5358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e0b8a0a0a0a0a0%3A0x0!2sVia+G.+Brodolini+12%2C+09040+Senorb%C3%AC+SU!5e0!3m2!1sit!2sit!4v1711929600000!5m2!1sit!2sit"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="M&C Elaborazioni e Consulenze - Via G. Brodolini 12, Senorbi">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C" width="140" height="44" loading="lazy" decoding="async">
+          <p>Consulenza aziendale, fiscale e contabile a Senorbi per PMI, artigiani e professionisti della Trexenta e della Sardegna.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mcelaborazioni" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/mcelaborazioni" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mcelaborazioni" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="/servizi/contabilita-paghe.html">Contabilita e Paghe</a></li>
+            <li><a href="/servizi/business-plan-finanziamenti.html">Business Plan</a></li>
+            <li><a href="/servizi/sicurezza-formazione.html">Sicurezza sul Lavoro</a></li>
+            <li><a href="/servizi/consulenza-societaria.html">Consulenza Societaria</a></li>
+            <li><a href="/servizi/pratiche-suape.html">Pratiche SUAPE</a></li>
+            <li><a href="/servizi/consulenza-fiscale.html">Consulenza Fiscale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Azienda</h4>
+          <ul>
+            <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="/team/">Il Team</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contatti.html">Contatti</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li>Via G. Brodolini 12<br>09040 Senorbi (SU)</li>
+            <li><a href="tel:+393939907903">+39 393 990 7903</a></li>
+            <li><a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024-2026 M&amp;C Elaborazioni e Consulenze Aziendali S.r.l.s. - P.IVA 01671740916 - Sede legale: Via Roma 75, 09054 Genoni (SU)</p>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <p>Sito realizzato da <a href="https://www.digidentityagency.com" target="_blank" rel="noopener">DigIdentity Agency</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT FAB -->
+  <div id="mc-agent" data-position="bottom-right" class="chatbot-fab" role="button" aria-label="Apri assistente virtuale" tabindex="0">
+    <img src="img/chatbot-icon.webp" alt="Chat" width="36" height="36" style="width:36px;height:36px;object-fit:contain;border-radius:50%;" decoding="async">
+  </div>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":["LocalBusiness","ProfessionalService"],
+        "@id":"https://www.mcconsulenze.it/#business",
+        "name":"M&C Elaborazioni e Consulenze Aziendali S.r.l.s.",
+        "alternateName":"M&C Consulenze",
+        "url":"https://www.mcconsulenze.it",
+        "logo":"https://www.mcconsulenze.it/img/logo-mc-elaborazioni.webp",
+        "image":"https://www.mcconsulenze.it/img/og-image.jpg",
+        "description":"Studio di consulenza aziendale, fiscale e contabile a Senorbi (Trexenta, Sardegna). Assistenza completa per PMI, artigiani, professionisti e startup.",
+        "telephone":"+393939907903",
+        "email":"info@mcelaborazioni.it",
+        "address":{"@type":"PostalAddress","streetAddress":"Via G. Brodolini 12","addressLocality":"Senorbi","addressRegion":"SU","postalCode":"09040","addressCountry":"IT"},
+        "geo":{"@type":"GeoCoordinates","latitude":39.5358,"longitude":9.1319},
+        "openingHoursSpecification":[
+          {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"13:00"},
+          {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"15:00","closes":"18:30"}
+        ],
+        "founder":[
+          {"@type":"Person","name":"Marco Pala","jobTitle":"Amministratore"},
+          {"@type":"Person","name":"Claudia Cancedda","jobTitle":"Co-Founder e Consulente"}
+        ],
+        "numberOfEmployees":{"@type":"QuantitativeValue","value":5},
+        "foundingDate":"2024-07-30",
+        "taxID":"01671740916",
+        "areaServed":[
+          {"@type":"City","name":"Senorbi"},
+          {"@type":"AdministrativeArea","name":"Trexenta"},
+          {"@type":"AdministrativeArea","name":"Sardegna"}
+        ],
+        "hasOfferCatalog":{
+          "@type":"OfferCatalog","name":"Servizi di consulenza",
+          "itemListElement":[
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Contabilita e Paghe"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Business Plan e Finanziamenti Agevolati"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sicurezza sul Lavoro e Formazione"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Consulenza Societaria"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Pratiche SUAPE"}},
+            {"@type":"Offer","itemOffered":{"@type":"Service","name":"Consulenza Fiscale e Strategica"}}
+          ]
+        },
+        "aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"3","bestRating":"5","worstRating":"1"},
+        "sameAs":["https://www.facebook.com/mcelaborazioni","https://www.linkedin.com/company/mcelaborazioni","https://www.instagram.com/mcelaborazioni"]
+      },
+      {"@type":"WebSite","@id":"https://www.mcconsulenze.it/#website","url":"https://www.mcconsulenze.it","name":"M&C Elaborazioni e Consulenze","publisher":{"@id":"https://www.mcconsulenze.it/#business"}},
+      {"@type":"Organization","@id":"https://www.mcconsulenze.it/#organization","name":"M&C Elaborazioni e Consulenze Aziendali S.r.l.s.","url":"https://www.mcconsulenze.it","logo":"https://www.mcconsulenze.it/img/logo-mc-elaborazioni.webp","contactPoint":{"@type":"ContactPoint","telephone":"+393939907903","contactType":"customer service","availableLanguage":"Italian"}},
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.mcconsulenze.it/"}]},
+      {
+        "@type":"FAQPage",
+        "mainEntity":[
+          {"@type":"Question","name":"A chi vi rivolgete?","acceptedAnswer":{"@type":"Answer","text":"Ci rivolgiamo a PMI, artigiani, liberi professionisti, startup e imprese di ogni dimensione operative nella Trexenta e in tutta la Sardegna."}},
+          {"@type":"Question","name":"Offrite un servizio di contabilita completo?","acceptedAnswer":{"@type":"Answer","text":"Si, gestiamo contabilita ordinaria e semplificata, elaborazione buste paga, dichiarazioni fiscali, bilanci, F24, comunicazioni periodiche e tutti gli adempimenti connessi."}},
+          {"@type":"Question","name":"Potete aiutarmi ad aprire una nuova attivita?","acceptedAnswer":{"@type":"Answer","text":"Assolutamente si. Ti assistiamo dalla scelta della forma giuridica alla costituzione societaria, dalle pratiche SUAPE alla partita IVA, fino alla ricerca di finanziamenti agevolati."}},
+          {"@type":"Question","name":"Mi aiutate a trovare finanziamenti e contributi?","acceptedAnswer":{"@type":"Answer","text":"Si, monitoriamo costantemente bandi regionali, nazionali e europei. Redigiamo business plan professionali e gestiamo l'intera pratica di richiesta."}},
+          {"@type":"Question","name":"Il primo incontro e a pagamento?","acceptedAnswer":{"@type":"Answer","text":"No, il primo incontro conoscitivo e sempre gratuito e senza impegno."}}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- SCRIPTS -->
+  <script src="js/libs/gsap.min.js" defer></script>
+  <script src="js/libs/ScrollTrigger.min.js" defer></script>
+  <script src="js/libs/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Siamo | M&C Elaborazioni e Consulenze – Marco Pala e Claudia Cancedda</title>
+  <meta name="description" content="Scopri il team di M&C Elaborazioni: Marco Pala e Claudia Cancedda. Consulenza aziendale, fiscale e contabile a Senorbi per PMI e professionisti della Sardegna.">
+  <meta name="keywords" content="chi siamo M&C, Marco Pala, Claudia Cancedda, team consulenza Senorbi, professionisti Trexenta">
+  <link rel="canonical" href="https://www.mcconsulenze.it/chi-siamo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chi Siamo | M&C Elaborazioni e Consulenze">
+  <meta property="og:description" content="Marco Pala e Claudia Cancedda: i professionisti dietro M&C Elaborazioni. Competenza, innovazione e dedizione.">
+  <meta property="og:image" content="https://www.mcconsulenze.it/img/MC_marco_claudia.webp">
+  <meta property="og:url" content="https://www.mcconsulenze.it/chi-siamo.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/logo-mc-elaborazioni.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
+  <link rel="preload" href="js/libs/gsap.min.js" as="script">
+  <link rel="preload" href="js/libs/ScrollTrigger.min.js" as="script">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    img,video,canvas{max-width:100%;height:auto}
+    :root{--deep:#0f1a2c;--navy:#1a2744;--night:#253044;--accent:#46b9ea;--light-accent:#7dd3fc;--bg-light:#f7f8fc;--white:#ffffff;--grey:#b2bcc8;--text-dark:#3a3f4b;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--radius:16px;--shadow:0 4px 24px rgba(0,0,0,0.12);--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);color:var(--grey);background:var(--deep);line-height:1.7;overflow-x:hidden}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+    .accent{color:var(--accent)}
+    a{color:var(--accent);text-decoration:none;transition:color var(--transition)}
+    a:hover{color:var(--light-accent)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);color:var(--white);line-height:1.2}
+    
+    /* HEADER */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(15,26,44,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4);transition:all .3s ease}
+    .header-logo img{height:44px;width:auto;filter:drop-shadow(0 0 8px rgba(70,185,234,.3))}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{font-size:.9rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:1.5px;position:relative;padding:4px 0}
+    .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent)!important;color:var(--deep)!important;padding:10px 24px!important;border-radius:60px!important;font-weight:700!important}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{box-shadow:0 0 30px rgba(70,185,234,.4)}
+    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px;z-index:1001}
+    .hamburger span{display:block;width:28px;height:2px;background:var(--white);transition:all .3s;border-radius:2px}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+    
+    /* BREADCRUMB */
+    .breadcrumb{padding:120px 0 20px;font-size:0.85rem}
+    .breadcrumb a{color:var(--grey)}
+    .breadcrumb a:hover{color:var(--accent)}
+    .breadcrumb span{color:var(--accent);margin:0 8px}
+    
+    /* HERO CHI SIAMO */
+    .chi-siamo-hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;overflow:hidden}
+    .chi-siamo-hero-bg{position:absolute;inset:0;z-index:0}
+    .chi-siamo-hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.25}
+    .chi-siamo-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,26,44,.6),rgba(15,26,44,.95))}
+    .chi-siamo-hero-content{position:relative;z-index:2;max-width:800px}
+    .chi-siamo-hero-content h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;margin-bottom:20px;line-height:1.1}
+    .chi-siamo-hero-content h1 span{color:var(--accent)}
+    .chi-siamo-hero-content p{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.8);max-width:600px;margin:0 auto 32px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(70,185,234,.15);border:1px solid rgba(70,185,234,.3);padding:8px 20px;border-radius:60px;font-size:.85rem;font-weight:600;color:var(--accent);margin-bottom:20px;backdrop-filter:blur(10px)}
+    .badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulsedot 2s infinite}
+    @keyframes pulsedot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+    .hero-scroll-arrow{margin-top:40px;animation:bounce-arrow 2s infinite}
+    @keyframes bounce-arrow{0%,100%{transform:translateY(0)}50%{transform:translateY(10px)}}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,var(--accent),#3a9fd4);color:var(--deep);font-family:var(--font-heading);font-weight:700;font-size:1rem;border-radius:50px;border:none;cursor:pointer;transition:transform .4s,box-shadow .4s;text-decoration:none;text-transform:uppercase;letter-spacing:1px}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(70,185,234,.3)}
+    .btn-arrow{display:inline-block;width:20px;height:20px;transition:transform .3s}
+    .btn-primary:hover .btn-arrow{transform:translateX(4px)}
+    
+    /* TEAM SECTION */
+    .team-section{padding:80px 0}
+    .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:80px}
+    .member-card{background:var(--night);border:1px solid rgba(70,185,234,.1);border-radius:var(--radius);overflow:hidden;transition:transform .5s,box-shadow .5s}
+    .member-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(70,185,234,.12)}
+    .member-photo{width:100%;height:400px;overflow:hidden}
+    .member-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+    .member-card:hover .member-photo img{transform:scale(1.05)}
+    .member-info{padding:32px}
+    .member-info h3{font-size:1.5rem;margin-bottom:4px}
+    .member-role{color:var(--accent);font-weight:600;font-size:.9rem;margin-bottom:16px;display:block}
+    .member-info p{font-size:.95rem;line-height:1.8;margin-bottom:12px}
+    .member-skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .skill-tag{background:rgba(70,185,234,.1);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:600}
+    
+    /* VALORI */
+    .valori-section{padding:80px 0;background:var(--bg-light)}
+    .valori-section h2{color:var(--deep);text-align:center;margin-bottom:48px}
+    .valori-section h2 span{color:var(--accent)}
+    .valori-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+    .valore-card{background:var(--white);border-radius:var(--radius);padding:36px;text-align:center;border:1px solid rgba(70,185,234,.1);transition:transform .4s,box-shadow .4s}
+    .valore-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(70,185,234,.1)}
+    .valore-icon{width:64px;height:64px;background:linear-gradient(135deg,rgba(70,185,234,.15),rgba(70,185,234,.05));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .valore-icon svg{width:28px;height:28px;stroke:var(--accent);stroke-width:1.5;fill:none}
+    .valore-card h3{color:var(--deep);font-size:1.1rem;margin-bottom:10px}
+    .valore-card p{color:#5a6070;font-size:.9rem;line-height:1.7}
+    
+    /* NUMERI */
+    .numeri-section{padding:80px 0}
+    .numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+    .numero-item{padding:20px}
+    .numero-valore{font-family:var(--font-heading);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;color:var(--accent);line-height:1;margin-bottom:8px}
+    .numero-label{font-size:.85rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--grey)}
+    
+    /* STORIA */
+    .storia-section{padding:80px 0;background:var(--bg-light)}
+    .storia-content{max-width:800px;margin:0 auto}
+    .storia-content h2{color:var(--deep);text-align:center;margin-bottom:32px}
+    .storia-content h2 span{color:var(--accent)}
+    .storia-content p{font-size:1.05rem;line-height:1.8;margin-bottom:20px;color:var(--text-dark)}
+    
+    /* CTA */
+    .cta-section{padding:80px 0;text-align:center}
+    .cta-section h2{margin-bottom:16px}
+    .cta-section p{margin-bottom:32px;font-size:1.05rem}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:linear-gradient(135deg,var(--accent),#3a9fd4);color:var(--white);font-family:var(--font-heading);font-weight:700;font-size:1rem;border-radius:50px;border:none;cursor:pointer;transition:transform .4s,box-shadow .4s;text-decoration:none}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(70,185,234,.3)}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;background:transparent;color:var(--accent);font-family:var(--font-heading);font-weight:700;font-size:1rem;border-radius:50px;border:2px solid var(--accent);cursor:pointer;transition:all .4s;text-decoration:none}
+    .btn-outline:hover{background:var(--accent);color:var(--deep)}
+    
+    /* FOOTER */
+    .site-footer{background:var(--navy);padding:60px 0 30px;border-top:1px solid rgba(70,185,234,.08)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand p{font-size:.9rem;color:var(--grey);line-height:1.7;margin-top:16px;max-width:300px}
+    .footer-brand img{height:38px;width:auto;filter:drop-shadow(0 0 6px rgba(70,185,234,.2))}
+    .footer-col h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:20px}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col ul li a{font-size:.9rem;color:var(--grey)}
+    .footer-col ul li a:hover{color:var(--accent)}
+    .footer-social{display:flex;gap:12px;margin-top:16px}
+    .footer-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(70,185,234,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+    .footer-social a:hover{background:var(--accent);border-color:var(--accent)}
+    .footer-social a svg{width:18px;height:18px}
+    .footer-social a svg path,.footer-social a svg rect,.footer-social a svg circle{fill:none;stroke:var(--grey);stroke-width:1.5;transition:stroke .3s}
+    .footer-social a:hover svg path,.footer-social a:hover svg rect,.footer-social a:hover svg circle{stroke:var(--deep)}
+    .footer-bottom{border-top:1px solid rgba(70,185,234,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-bottom p{font-size:.8rem;color:var(--grey)}
+    .footer-bottom a{font-size:.8rem}
+    
+    /* DIVIDER */
+    .section-divider{padding:0;display:flex;justify-content:center}
+    .divider-line{width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.5}
+    
+    /* CHATBOT */
+    .chatbot-fab{position:fixed!important;bottom:24px!important;right:24px!important;left:auto!important;width:60px;height:60px;background:linear-gradient(135deg,var(--accent),#3a9fd4);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:999;box-shadow:0 4px 20px rgba(70,185,234,.4);transition:all .3s}
+    .chatbot-fab:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(70,185,234,.6)}
+    
+    /* REVEAL */
+    [data-reveal]{opacity:0;transform:translateY(30px)}
+    .reveal-left{opacity:0;transform:translateX(-40px)}
+    .reveal-right{opacity:0;transform:translateX(40px)}
+    
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .team-grid{grid-template-columns:1fr;gap:48px}
+      .valori-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .numeri-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+    }
+    @media(max-width:768px){
+      .site-header{padding:16px 20px}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,26,44,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:999}
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1.2rem}
+      .hamburger{display:flex}
+      .valori-grid{grid-template-columns:1fr}
+      .numeri-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .member-photo{height:300px}
+    }
+    @media(max-width:480px){
+      .container{padding:0 16px}
+      .numeri-grid{grid-template-columns:1fr 1fr;gap:16px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}
+    }
+    .word-reveal{overflow:hidden;vertical-align:top}
+    .word-inner{will-change:transform,opacity}
+    h2 .word-reveal{margin-right:0.25em}
+    .faq-question{overflow:hidden!important;max-width:calc(100% - 60px)!important;clip-path:inset(0);word-wrap:break-word}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+      <a href="/" class="header-logo" aria-label="M&C Home">
+        <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C Elaborazioni e Consulenze Aziendali" width="160" height="50" loading="eager" fetchpriority="high" decoding="async">
+      </a>
+      <nav>
+        <ul class="nav-links" id="nav-links" role="menubar">
+          <li role="none"><a href="/" role="menuitem">Home</a></li>
+          <li role="none"><a href="/chi-siamo.html" role="menuitem" class="active">Chi Siamo</a></li>
+          <li role="none"><a href="/servizi.html" role="menuitem">Servizi</a></li>
+          <li role="none"><a href="/blog.html" role="menuitem">Blog</a></li>
+          <li role="none"><a href="/contatti.html" role="menuitem" class="nav-cta">Contattaci</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO CHI SIAMO -->
+  <section class="chi-siamo-hero">
+    <div class="chi-siamo-hero-bg">
+      <img src="img/chi-siamo-hero.webp" alt="Team M&C - Chi siamo" width="1920" height="800" loading="eager" decoding="async">
+    </div>
+    <div class="chi-siamo-hero-content" data-reveal>
+      <div class="hero-badge"><span class="badge-dot"></span> 👥 Il nostro team</div>
+      <h1>Chi <span>Siamo</span></h1>
+      <p>Cinque professionisti con competenze complementari al servizio delle imprese della Trexenta e della Sardegna dal 2018.</p>
+      <a href="#team" class="btn-primary">
+        Scopri il team
+        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="hero-scroll-arrow" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#46b9ea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m0 0l-6-6m6 6l6-6"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a><span>›</span><strong style="color:var(--white)">Chi Siamo</strong>
+    </div>
+  </div>
+
+  <!-- TEAM -->
+  <section class="team-section bg-dark" id="team" style="padding:80px 0;">
+    <div class="container">
+      <div class="team-grid">
+        
+        <!-- MARCO PALA -->
+        <article class="member-card reveal-left" data-reveal>
+          <div class="member-photo">
+            <img src="img/MC_marco.webp" alt="Marco Pala - Founder e Amministratore M&C" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="member-info">
+            <h3>Marco Pala</h3>
+            <span class="member-role">Founder & Amministratore</span>
+            <p>Marco e l'anima strategica dello studio. Con oltre 8 anni di esperienza nella consulenza aziendale e fiscale, ha costruito un metodo di lavoro che unisce competenza tecnica e attenzione al cliente.</p>
+            <p>La sua missione e trasformare la complessita normativa in soluzioni pratiche e misurabili per ogni cliente, dalla piccola impresa artisanale alla SRL strutturata.</p>
+            <div class="member-skills">
+              <span class="skill-tag">Consulenza Fiscale</span>
+              <span class="skill-tag">Pianificazione Strategica</span>
+              <span class="skill-tag">Finanza Agevolata</span>
+              <span class="skill-tag">Business Plan</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CLAUDIA CANCEDDA -->
+        <article class="member-card reveal-right" data-reveal>
+          <div class="member-photo">
+            <img src="img/MC_claudia.webp" alt="Claudia Cancedda - Co-Founder e Consulente M&C" width="600" height="400" loading="lazy" decoding="async">
+          </div>
+          <div class="member-info">
+            <h3>Claudia Cancedda</h3>
+            <span class="member-role">Co-Founder & Consulente</span>
+            <p>Claudia e il punto di riferimento per la gestione contabile e le pratiche amministrative dello studio. La sua precisione e la sua capacita organizzativa garantiscono un servizio impeccabile e puntuale.</p>
+            <p>Si occupa di contabilita, paghe, pratiche SUAPE e sicurezza sul lavoro, seguendo ogni cliente con attenzione e disponibilita costante.</p>
+            <div class="member-skills">
+              <span class="skill-tag">Contabilita</span>
+              <span class="skill-tag">Elaborazione Paghe</span>
+              <span class="skill-tag">Pratiche SUAPE</span>
+              <span class="skill-tag">Sicurezza sul Lavoro</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMERI -->
+  <section class="numeri-section bg-light" style="background:var(--bg-light);">
+    <div class="container">
+      <div class="numeri-grid">
+        <div class="numero-item" data-reveal>
+          <div class="numero-valore">500+</div>
+          <div class="numero-label">Pratiche Gestite</div>
+        </div>
+        <div class="numero-item" data-reveal>
+          <div class="numero-valore">5</div>
+          <div class="numero-label">Professionisti</div>
+        </div>
+        <div class="numero-item" data-reveal>
+          <div class="numero-valore">15+</div>
+          <div class="numero-label">Anni Esperienza</div>
+        </div>
+        <div class="numero-item" data-reveal>
+          <div class="numero-valore">97%</div>
+          <div class="numero-label">Clienti Soddisfatti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORI -->
+  <section class="valori-section" style="background:var(--bg-light);color:var(--text-dark);">
+    <div class="container">
+      <h2>I Nostri <span style="color:var(--accent);">Valori</span></h2>
+      <div class="valori-grid">
+        <div class="valore-card" data-reveal>
+          <div class="valore-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Passione</h3>
+          <p>Amiamo il nostro lavoro e lo facciamo con entusiasmo. Ogni cliente e una sfida che affrontiamo con dedizione e professionalita.</p>
+        </div>
+        <div class="valore-card" data-reveal>
+          <div class="valore-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Affidabilita</h3>
+          <p>Manteniamo le promesse. Scadenze rispettate, comunicazioni puntuali, consulenze trasparenti: puoi contare su di noi.</p>
+        </div>
+        <div class="valore-card" data-reveal>
+          <div class="valore-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Efficienza</h3>
+          <p>Il tuo tempo e prezioso quanto il nostro. Usiamo strumenti digitali e processi ottimizzati per offrirti risultati rapidi e precisi.</p>
+        </div>
+        <div class="valore-card" data-reveal>
+          <div class="valore-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Collaborazione</h3>
+          <p>Non siamo solo consulenti, siamo il tuo partner. Lavoriamo insieme a te per costruire soluzioni su misura.</p>
+        </div>
+        <div class="valore-card" data-reveal>
+          <div class="valore-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Innovazione</h3>
+          <p>Investiamo in tecnologia e formazione continua per offrirti strumenti sempre aggiornati e all'avanguardia.</p>
+        </div>
+        <div class="valore-card" data-reveal>
+          <div class="valore-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Radicamento</h3>
+          <p>Conosciamo il territorio, le opportunita locali e le sfide delle imprese sarde. Siamo parte della Trexenta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIA -->
+  <section class="storia-section" style="background:var(--bg-light);color:var(--text-dark);">
+    <div class="container">
+      <div class="storia-content" data-reveal>
+        <h2>La Nostra <span style="color:var(--accent);">Storia</span></h2>
+        <p>M&C Elaborazioni e Consulenze Aziendali nasce nel luglio 2024 dall'unione delle competenze complementari di Marco Pala e Claudia Cancedda. Con sede operativa a Senorbi, nel cuore della Trexenta, il nostro studio nasce con una visione chiara: offrire consulenza aziendale, fiscale e contabile di alto livello alle PMI, agli artigiani, ai liberi professionisti e alle startup di tutta la Sardegna.</p>
+        <p>La nostra missione e semplice: trasformare la complessita burocratica e fiscale in un vantaggio competitivo per i nostri clienti. Non siamo semplici consulenti, siamo partner strategici che crescono insieme alla tua impresa.</p>
+        <p>Oggi il team e cresciuto fino a contare 5 professionisti, ognuno con competenze specifiche che si integrano perfettamente. Questo ci permette di offrire un servizio completo e multidisciplinare, gestendo ogni aspetto della vita aziendale di un cliente: dalla contabilita alla sicurezza, dalle pratiche amministrative alla pianificazione fiscale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section bg-dark" style="padding:80px 0;">
+    <div class="container" data-reveal>
+      <span class="section-label" style="color:var(--accent);">Lavora con Noi</span>
+      <h2>Vuoi far parte del <span class="accent">team</span>?</h2>
+      <p>Siamo sempre alla ricerca di professionisti motivati e appassionati. Se vuoi crescere con noi, contattaci.</p>
+      <div class="cta-buttons">
+        <a href="/contatti.html" class="btn-primary">Candidati Ora</a>
+        <a href="tel:+393939907903" class="btn-outline">📞 +39 393 990 7903</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C" width="140" height="44" loading="lazy" decoding="async">
+          <p>Consulenza aziendale, fiscale e contabile a Senorbi per PMI, artigiani e professionisti della Trexenta e della Sardegna.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mcelaborazioni" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/mcelaborazioni" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mcelaborazioni" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="/servizi/contabilita-paghe.html">Contabilita e Paghe</a></li>
+            <li><a href="/servizi/business-plan-finanziamenti.html">Business Plan</a></li>
+            <li><a href="/servizi/sicurezza-formazione.html">Sicurezza sul Lavoro</a></li>
+            <li><a href="/servizi/consulenza-societaria.html">Consulenza Societaria</a></li>
+            <li><a href="/servizi/pratiche-suape.html">Pratiche SUAPE</a></li>
+            <li><a href="/servizi/consulenza-fiscale.html">Consulenza Fiscale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Azienda</h4>
+          <ul>
+            <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contatti.html">Contatti</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li>Via G. Brodolini 12<br>09040 Senorbi (SU)</li>
+            <li><a href="tel:+393939907903">+39 393 990 7903</a></li>
+            <li><a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024-2026 M&C Elaborazioni e Consulenze Aziendali S.r.l.s. - P.IVA 01671740916</p>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <p>Sito realizzato da <a href="https://www.digidentityagency.com" target="_blank" rel="noopener">DigIdentity Agency</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT FAB -->
+  <div id="mc-agent" data-position="bottom-right" class="chatbot-fab" role="button" aria-label="Apri assistente virtuale" tabindex="0">
+    <img src="img/chatbot-icon.webp" alt="Chat" width="36" height="36" style="width:36px;height:36px;object-fit:contain;border-radius:50%;" decoding="async" loading="lazy">
+  </div>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"AboutPage",
+        "@id":"https://www.mcconsulenze.it/chi-siamo.html",
+        "url":"https://www.mcconsulenze.it/chi-siamo.html",
+        "name":"Chi Siamo | M&C Elaborazioni e Consulenze",
+        "description":"Scopri il team di M&C Elaborazioni: Marco Pala e Claudia Cancedda. Consulenza aziendale e fiscale a Senorbi.",
+        "isPartOf":{"@id":"https://www.mcconsulenze.it/#website"},
+        "about":{"@id":"https://www.mcconsulenze.it/#business"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.mcconsulenze.it/"},
+          {"@type":"ListItem","position":2,"name":"Chi Siamo","item":"https://www.mcconsulenze.it/chi-siamo.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- SCRIPTS -->
+  <script src="js/libs/gsap.min.js" defer></script>
+  <script src="js/libs/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>

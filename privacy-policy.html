@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | M&C Elaborazioni e Consulenze Aziendali</title>
+  <meta name="description" content="Informativa sulla privacy di M&C Elaborazioni e Consulenze Aziendali S.r.l.s. Come trattiamo i tuoi dati personali ai sensi del GDPR (UE) 2016/679.">
+  <link rel="canonical" href="https://www.mcconsulenze.it/privacy-policy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Privacy Policy | M&C Elaborazioni">
+  <meta property="og:description" content="Informativa sulla privacy ai sensi del GDPR (UE) 2016/679.">
+  <meta property="og:url" content="https://www.mcconsulenze.it/privacy-policy.html">
+  <link rel="icon" href="img/logo-mc-elaborazioni.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
+  <link rel="preload" href="js/libs/gsap.min.js" as="script">
+  <link rel="preload" href="js/libs/ScrollTrigger.min.js" as="script">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    img,video,canvas{max-width:100%;height:auto}
+    :root{--deep:#0f1a2c;--navy:#1a2744;--night:#253044;--accent:#46b9ea;--light-accent:#7dd3fc;--bg-light:#f7f8fc;--white:#ffffff;--grey:#b2bcc8;--text-dark:#3a3f4b;--font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;--radius:16px;--shadow:0 4px 24px rgba(0,0,0,0.12);--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);color:var(--grey);background:var(--deep);line-height:1.8;overflow-x:hidden}
+    .container{max-width:900px;margin:0 auto;padding:0 24px}
+    .accent{color:var(--accent)}
+    a{color:var(--accent);text-decoration:none;transition:color var(--transition)}
+    a:hover{color:var(--light-accent)}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);color:var(--white);line-height:1.3}
+    
+    /* HEADER */
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;background:var(--deep);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 2px 30px rgba(0,0,0,.4);transition:padding .3s ease}
+    .header-logo{display:flex;align-items:center}
+    .header-logo img{height:44px;width:auto;filter:drop-shadow(0 0 8px rgba(70,185,234,.3))}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+    .nav-links a{font-size:.9rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:1.5px;position:relative;padding:4px 0}
+    .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-links a:hover{color:var(--accent)}
+    .nav-cta{background:var(--accent)!important;color:var(--deep)!important;padding:10px 24px!important;border-radius:60px!important;font-weight:700!important}
+    .nav-cta::after{display:none!important}
+    .nav-cta:hover{box-shadow:0 0 30px rgba(70,185,234,.4)}
+    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;background:none;border:none;padding:8px;z-index:1001}
+    .hamburger span{display:block;width:28px;height:2px;background:var(--white);transition:all .3s;border-radius:2px}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(6px,6px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
+    
+    /* BREADCRUMB */
+    .breadcrumb{padding:120px 0 20px;font-size:0.85rem}
+    .breadcrumb a{color:var(--grey)}
+    .breadcrumb a:hover{color:var(--accent)}
+    .breadcrumb span{color:var(--accent);margin:0 8px}
+    
+    /* PRIVACY CONTENT */
+    .privacy-content{padding:40px 0 80px}
+    .privacy-content h1{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:8px}
+    .privacy-content h1 span{color:var(--accent)}
+    .privacy-content .last-update{font-size:.85rem;color:var(--grey);margin-bottom:40px;display:block}
+    .privacy-content h2{font-size:1.4rem;margin:40px 0 16px;color:var(--white)}
+    .privacy-content h3{font-size:1.15rem;margin:24px 0 12px;color:var(--white)}
+    .privacy-content p{font-size:.95rem;line-height:1.9;margin-bottom:16px;color:var(--grey)}
+    .privacy-content ul,.privacy-content ol{margin:16px 0 16px 24px;font-size:.95rem;line-height:1.8;color:var(--grey)}
+    .privacy-content ul li,.privacy-content ol li{margin-bottom:8px;padding-left:8px}
+    .privacy-content ul li::marker{color:var(--accent)}
+    
+    /* TABLE */
+    .privacy-table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:.9rem}
+    .privacy-table th,.privacy-table td{padding:12px 16px;text-align:left;border-bottom:1px solid rgba(70,185,234,.08)}
+    .privacy-table th{background:rgba(70,185,234,.05);color:var(--white);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+    .privacy-table td{color:var(--grey)}
+    .privacy-table tr:hover td{background:rgba(70,185,234,.03)}
+    
+    /* HIGHLIGHT BOX */
+    .highlight-box{background:rgba(70,185,234,.05);border-left:3px solid var(--accent);padding:20px 24px;border-radius:0 10px 10px 0;margin:24px 0}
+    .highlight-box p{margin:0;color:var(--grey)}
+    .highlight-box strong{color:var(--white)}
+    
+    /* FOOTER */
+    .site-footer{background:var(--navy);padding:60px 0 30px;border-top:1px solid rgba(70,185,234,.08)}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+    .footer-brand p{font-size:.9rem;color:var(--grey);line-height:1.7;margin-top:16px;max-width:300px}
+    .footer-brand img{height:38px;width:auto;filter:drop-shadow(0 0 6px rgba(70,185,234,.2))}
+    .footer-col h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--white);margin-bottom:20px}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:10px}
+    .footer-col ul li a{font-size:.9rem;color:var(--grey)}
+    .footer-col ul li a:hover{color:var(--accent)}
+    .footer-social{display:flex;gap:12px;margin-top:16px}
+    .footer-social a{width:40px;height:40px;min-width:40px;border-radius:50%;border:1px solid rgba(70,185,234,.15);display:flex;align-items:center;justify-content:center;transition:all .3s}
+    .footer-social a:hover{background:var(--accent);border-color:var(--accent)}
+    .footer-social a svg{width:18px;height:18px}
+    .footer-social a svg path,.footer-social a svg rect,.footer-social a svg circle{fill:none;stroke:var(--grey);stroke-width:1.5;transition:stroke .3s}
+    .footer-social a:hover svg path,.footer-social a:hover svg rect,.footer-social a:hover svg circle{stroke:var(--deep)}
+    .footer-bottom{border-top:1px solid rgba(70,185,234,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-bottom p{font-size:.8rem;color:var(--grey)}
+    .footer-bottom a{font-size:.8rem}
+    
+    /* CHATBOT */
+    .chatbot-fab{display:none}
+    
+    /* REVEAL */
+    [data-reveal]{opacity:0;transform:translateY(30px)}
+    
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .site-header{padding:16px 20px}
+      .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,26,44,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:999}
+      .nav-links.open{display:flex}
+      .nav-links a{font-size:1.2rem}
+      .hamburger{display:flex}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .privacy-table{display:block;overflow-x:auto}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:0;">
+      <a href="/" class="header-logo" aria-label="M&C Home">
+        <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C Elaborazioni e Consulenze Aziendali" width="160" height="50" loading="eager" fetchpriority="high" decoding="async">
+      </a>
+      <nav>
+        <ul class="nav-links" id="nav-links" role="menubar">
+          <li role="none"><a href="/" role="menuitem">Home</a></li>
+          <li role="none"><a href="/chi-siamo.html" role="menuitem">Chi Siamo</a></li>
+          <li role="none"><a href="/servizi.html" role="menuitem">Servizi</a></li>
+          <li role="none"><a href="/blog.html" role="menuitem">Blog</a></li>
+          <li role="none"><a href="/contatti.html" role="menuitem" class="nav-cta">Contattaci</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="/">Home</a><span>›</span><strong style="color:var(--white)">Privacy Policy</strong>
+    </div>
+  </div>
+
+  <!-- PRIVACY CONTENT -->
+  <section class="privacy-content">
+    <div class="container">
+
+      <h1>Privacy <span>Policy</span></h1>
+      <span class="last-update">Ultimo aggiornamento: 04 Aprile 2026</span>
+
+      <h2>1. Titolare del trattamento dei dati</h2>
+      <p>Il Titolare del trattamento dei dati personali e:</p>
+      <div class="highlight-box">
+        <p><strong>M&C Elaborazioni e Consulenze Aziendali S.r.l.s.</strong><br>
+        P.IVA: 01671740916<br>
+        Sede legale: Via Roma 75, 09054 Genoni (SU)<br>
+        Sede operativa: Via G. Brodolini 12, 09040 Senorbi (SU)<br>
+        Email: <a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a><br>
+        Telefono: <a href="tel:+393939907903">+39 393 990 7903</a></p>
+      </div>
+
+      <h2>2. Tipologia di dati raccolti</h2>
+      <p>Raccogliamo i seguenti dati personali che ci fornisci direttamente:</p>
+      <ul>
+        <li><strong>Dati identificativi:</strong> nome, cognome, indirizzo email, numero di telefono</li>
+        <li><strong>Dati del modulo di contatto:</strong> tutte le informazioni che inserisci volontariamente nei moduli del nostro sito (es. servizio di interesse, messaggio libero)</li>
+        <li><strong>Dati di navigazione:</strong> indirizzo IP, tipo di browser, sistema operativo, pagina di provenienza, pagine visitate, data e ora della visita (raccolti automaticamente tramite cookie tecnici e statistici)</li>
+      </ul>
+      <p>Non raccogliamo categorie particolari di dati (dati sensibili) ai sensi dell'Art. 9 del GDPR.</p>
+
+      <h2>3. Finalita del trattamento</h2>
+      <p>I tuoi dati sono trattati per le seguenti finalita:</p>
+      <ol>
+        <li><strong>Erogazione dei servizi:</strong> gestire richieste di informazione, preventivi, consulenze e prestazioni professionali contrattualizzate</li>
+        <li><strong>Obblighi contrattuali:</strong> adempiere agli obblighi previsti dal contratto che ci lega</li>
+        <li><strong>Obblighi di legge:</strong> adempiere a obblighi previsti da norme nazionali e comunitarie (es. normativa antiriciclaggio)</li>
+        <li><strong>Con il tuo consenso:</strong> invio di newsletter, materiale promozionale e comunicazioni marketing</li>
+        <li><strong>Interesse legittimo:</strong> miglioramento dei servizi, analisi statistiche anonime, tutela in sede legale</li>
+      </ol>
+
+      <h2>4. Base giuridica del trattamento</h2>
+      <table class="privacy-table">
+        <thead>
+          <tr><th>Finalita</th><th>Base giuridica</th><th>Obbligatorio/Facoltativo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Contatto e consulenza</td><td>Esecuzione di misure precontrattuali (Art. 6(1)(b) GDPR)</td><td>Obbligatorio</td></tr>
+          <tr><td>Adempimenti legali</td><td>Obbligo legale (Art. 6(1)(c) GDPR)</td><td>Obbligatorio</td></tr>
+          <tr><td>Newsletter</td><td>Consenso (Art. 6(1)(a) GDPR)</td><td>Facoltativo</td></tr>
+          <tr><td>Marketing</td><td>Consenso (Art. 6(1)(a) GDPR)</td><td>Facoltativo</td></tr>
+        </tbody>
+      </table>
+
+      <h2>5. Modalita del trattamento</h2>
+      <p>Il trattamento dei dati avviene mediante strumenti manuali, informatici e telematici, con logiche strettamente correlate alle finalita sopra descritte e comunque idonee a garantire la sicurezza e la riservatezza dei dati. In particolare, vengono adottate misure tecniche e organizzative adeguate contro il trattamento non autorizzato o illecito, la perdita, la distruzione o il danno accidentale.</p>
+
+      <h2>6. Durata del trattamento</h2>
+      <p>I dati raccolti per la gestione dei servizi professionali saranno conservati per tutta la durata del rapporto contrattuale e successivamente, per i soli fini di adempimento a obblighi di legge, per il tempo prescritto dalle norme vigenti (salvo diversa comunicazione).</p>
+      <p>I dati trattati sulla base del tuo consenso (es. newsletter) saranno conservati fino alla revoca del consenso stesso. Puoi revocare il consenso in qualsiasi momento cliccando il link "annulla iscrizione" presente in ogni email o scrivendoci a <a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a>.</p>
+
+      <h2>7. Comunicazione dei dati</h2>
+      <p>I tuoi dati personali potranno essere comunicati, nei limiti dell'opportunita e della necessita, a:</p>
+      <ul>
+        <li>Dipendenti e collaboratori dello studio, in qualita di incaricati del trattamento</li>
+        <li>Consulenti esterni (es. commercialisti, legali) per l'esecuzione di servizi legati al rapporto contrattuale</li>
+        <li>Fornitori di servizi tecnici (es. hosting del sito web, gestione email)</li>
+        <li>Autorita competenti, nei casi previsti dalla legge</li>
+      </ul>
+      <p>I dati non saranno diffusi ne comunicati a soggetti indeterminati.</p>
+
+      <h2>8. Diritti dell'interessato</h2>
+      <p>Ai sensi dell'Art. 15 e seguenti del GDPR (Regolamento UE 2016/679), hai il diritto di:</p>
+      <ul>
+        <li><strong>Accesso:</strong> ottenere la conferma che i tuoi dati siano o meno trattati e riceverne una copia</li>
+        <li><strong>Rettifica:</strong> richiedere la correzione di dati inesatti o incompleti</li>
+        <li><strong>Cancellazione:</strong> richiedere la cancellazione dei tuoi dati quando non sono piu necessari o se il trattamento e illecito</li>
+        <li><strong>Limitazione:</strong> ottenere la limitazione del trattamento nei casi previsti dalla legge</li>
+        <li><strong>Portabilita:</strong> ricevere i tuoi dati in formato strutturato e leggibile</li>
+        <li><strong>Opposizione:</strong> opporti al trattamento dei tuoi dati in qualsiasi momento</li>
+        <li><strong>Revoca del consenso:</strong> revocare il consenso precedentemente prestato, senza pregiudizio per la liceita del trattamento avvenuto prima della revoca</li>
+      </ul>
+      <p>Per esercitare i tuoi diritti, puoi scrivere a <a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a>.</p>
+      <p>Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
+
+      <h2>9. Cookie Policy</h2>
+      <p>Il sito mcconsulenze.it utilizza:</p>
+      <ul>
+        <li><strong>Cookie tecnici:</strong> necessari per il funzionamento del sito e per ricordare le tue preferenze (es. accettazione cookie). Non richiedono il tuo consenso</li>
+        <li><strong>Cookie di terze parti:</strong> eventualmente installati da Google Fonts, Google Analytics o altri servizi esterni. Per la gestione e il consenso a questi cookie si rimanda alle rispettive policy</li>
+      </ul>
+      <p>Puoi modificare le tue preferenze sui cookie in ogni momento tramite le impostazioni del tuo browser.</p>
+
+      <h2>10. Modifiche alla Privacy Policy</h2>
+      <p>La presente Privacy Policy puo essere modificata per adeguarla a novita normative, giurisprudenziali o organizzative. Le modifiche saranno pubblicate in questa pagina con l'indicazione della data di ultimo aggiornamento. Ti invitiamo a consultarla periodicamente.</p>
+
+      <h2>11. Contatti</h2>
+      <p>Per qualsiasi domanda relativa alla presente Privacy Policy e al trattamento dei tuoi dati personali, puoi contattarci:</p>
+      <div class="highlight-box">
+        <p><strong>Email:</strong> <a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a><br>
+        <strong>Telefono:</strong> <a href="tel:+393939907903">+39 393 990 7903</a><br>
+        <strong>Sede operativo:</strong> Via G. Brodolini 12, 09040 Senorbi (SU)</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="img/logo-mc-elaborazioni.webp" alt="Logo M&C" width="140" height="44" loading="lazy" decoding="async">
+          <p>Consulenza aziendale, fiscale e contabile a Senorbi per PMI, artigiani e professionisti della Trexenta e della Sardegna.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/mcelaborazioni" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/mcelaborazioni" aria-label="LinkedIn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="https://www.instagram.com/mcelaborazioni" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="/servizi/contabilita-paghe.html">Contabilita e Paghe</a></li>
+            <li><a href="/servizi/business-plan-finanziamenti.html">Business Plan</a></li>
+            <li><a href="/servizi/sicurezza-formazione.html">Sicurezza sul Lavoro</a></li>
+            <li><a href="/servizi/consulenza-societaria.html">Consulenza Societaria</a></li>
+            <li><a href="/servizi/pratiche-suape.html">Pratiche SUAPE</a></li>
+            <li><a href="/servizi/consulenza-fiscale.html">Consulenza Fiscale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Azienda</h4>
+          <ul>
+            <li><a href="/chi-siamo.html">Chi Siamo</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contatti.html">Contatti</a></li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li>Via G. Brodolini 12<br>09040 Senorbi (SU)</li>
+            <li><a href="tel:+393939907903">+39 393 990 7903</a></li>
+            <li><a href="mailto:info@mcelaborazioni.it">info@mcelaborazioni.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024-2026 M&C Elaborazioni e Consulenze Aziendali S.r.l.s. - P.IVA 01671740916</p>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <p>Sito realizzato da <a href="https://www.digidentityagency.com" target="_blank" rel="noopener">DigIdentity Agency</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/libs/gsap.min.js" defer></script>
+  <script src="js/libs/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+</html>
