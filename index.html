@@ -597,6 +597,114 @@
 .faq-item{position:relative;overflow:hidden!important}.faq-question{overflow:hidden!important}.faq-item *{max-width:100%}
 #faq{position:relative;overflow:hidden}#faq .faq-item{overflow:hidden;clip-path:inset(0)}#faq .faq-question{overflow:hidden;clip-path:inset(0)}
 .faq-question{overflow:hidden!important;max-width:calc(100% - 60px)!important;word-wrap:break-word}
+
+    /* ===== MOBILE OPTIMIZATION V2 ===== */
+    @media(max-width:768px){
+      /* Hero overlay */
+      .hero-overlay{padding:0 16px}
+      .hero-overlay h1{font-size:clamp(1.8rem,5vw,2.2rem)}
+      .hero-overlay p{font-size:0.95rem}
+      .hero-badge{font-size:.75rem;padding:6px 14px}
+      .hero-scroll-hint{bottom:16px}
+
+      /* Buttons */
+      .btn-primary,.btn-hero,.btn-outline{
+        padding:14px 28px;font-size:.9rem;width:100%;justify-content:center;
+      }
+
+      /* Sections padding */
+      .section-services,.section-about,.section-why,.section-method,
+      .section-cases,.section-testimonials,.section-faq,.section-blog,.section-cta{
+        padding:60px 0;
+      }
+
+      /* Section titles */
+      .section-title{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:16px}
+      .section-subtitle{font-size:1rem;margin-bottom:32px}
+
+      /* Service cards */
+      .service-card{padding:28px 20px}
+      .service-card h3{font-size:1.1rem}
+      .service-icon{width:48px;height:48px}
+
+      /* About */
+      .about-grid{grid-template-columns:1fr;gap:32px;text-align:center}
+      .about-text p{font-size:1rem}
+      .about-mini-stats{justify-content:center}
+      .team-photo-card{width:160px;height:220px}
+      .team-photo-card:first-child,.team-photo-card:last-child{transform:none}
+      .team-photo-name{font-size:.8rem;padding:6px 12px}
+
+      /* Why cards */
+      .why-grid{grid-template-columns:1fr}
+      .why-card{padding:28px 20px}
+      .why-icon{width:52px;height:52px}
+
+      /* Method */
+      .method-step{gap:20px;padding:24px 0}
+      .method-step-number{width:48px;height:48px;min-width:48px;font-size:1.1rem}
+      .method-step-content h3{font-size:1.1rem}
+      .method-step-content p{font-size:.9rem}
+      .method-step img{max-width:100%;height:auto;border-radius:var(--radius-sm)}
+
+      /* Cases */
+      .cases-grid{grid-template-columns:1fr}
+      .case-card{padding:28px 20px}
+      .case-result{font-size:1.6rem}
+
+      /* Testimonials */
+      .testimonial-card{min-width:280px;max-width:280px;padding:24px}
+      .testimonial-card blockquote{font-size:.9rem;padding-left:16px}
+
+      /* FAQ */
+      .faq-question{padding:20px 0;font-size:1rem;min-height:48px}
+      .faq-answer p{font-size:.9rem}
+
+      /* Blog */
+      .blog-grid{grid-template-columns:1fr}
+      .blog-card-body{padding:20px}
+      .blog-card h3{font-size:1rem}
+
+      /* CTA */
+      .cta-content{padding:0 16px}
+      .cta-content h2{font-size:clamp(1.5rem,4vw,2rem)}
+      .cta-buttons{flex-direction:column;align-items:stretch;gap:12px;padding:0 16px}
+
+      /* Footer */
+      .footer-grid{grid-template-columns:1fr;gap:32px;text-align:center}
+      .footer-brand{display:flex;flex-direction:column;align-items:center}
+      .footer-brand p{max-width:100%}
+      .footer-social{justify-content:center}
+      .footer-social a{width:44px;height:44px}
+      .footer-bottom{flex-direction:column;text-align:center;gap:8px}
+
+      /* General touch targets */
+      a,button{min-height:44px}
+      .nav-links a{min-height:48px;display:flex;align-items:center}
+    }
+
+    @media(max-width:480px){
+      /* Extra small */
+      .hero-overlay h1{font-size:1.6rem}
+      .hero-badge{font-size:.7rem;padding:5px 12px;flex-wrap:wrap;text-align:center}
+      .stats-grid{grid-template-columns:1fr 1fr;gap:12px}
+      .stat-number{font-size:1.8rem}
+      .stat-label{font-size:.75rem}
+      .team-photo-card{width:140px;height:200px}
+      .about-mini-stats{flex-direction:column;gap:16px;align-items:center}
+      .mini-number{font-size:1.6rem}
+      .testimonial-card{min-width:260px;max-width:260px;padding:20px}
+      .container{padding:0 12px}
+      .method-timeline::before{left:24px}
+      .method-progress-bar{left:24px}
+      .method-step-number{width:44px;height:44px;min-width:44px;font-size:1rem}
+      .chatbot-fab{width:52px;height:52px;bottom:16px;right:16px}
+      .map-wrapper iframe{height:250px}
+      .footer-social a{width:40px;height:40px}
+      .service-card{padding:24px 16px}
+      .why-card{padding:24px 16px}
+      .case-card{padding:24px 16px}
+    }
 </style>
 </head>
 <body>
