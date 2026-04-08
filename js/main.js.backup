@@ -1,5 +1,5 @@
-/* ============================================================
-   M&C Elaborazioni e Consulenze – main.js V4 Premium
+ï»¿/* ============================================================
+   M&C Elaborazioni e Consulenze â€“ main.js V4 Premium
    Vanilla JS + GSAP 3.12 + ScrollTrigger + Lenis
    ============================================================ */
 (function () {
@@ -11,7 +11,7 @@
   var FRAME_COUNT = 141;
   var FRAME_PATH = 'img/hero-frames/frame-';
   var FRAME_EXT = '.webp';
-  var PRELOAD_BATCH = 10;
+  var PRELOAD_BATCH = 30;
   var OVERLAY_SHOW = 0.75;
   var OVERLAY_HIDE = 0.97;
 
@@ -87,7 +87,7 @@
   }
 
   /* ============================================================
-     HEADER – trasparente in hero, solido dopo
+     HEADER â€“ trasparente in hero, solido dopo
      ============================================================ */
   function initHeader() {
     var header = document.getElementById('site-header');
@@ -137,7 +137,7 @@
   }
 
   /* ============================================================
-     HERO CANVAS – 141 frame scrub
+     HERO CANVAS â€“ 141 frame scrub
      ============================================================ */
   function initHeroCanvas() {
     var canvas = document.getElementById('hero-canvas');
@@ -216,7 +216,7 @@
     /* resto dopo 500ms */
     setTimeout(function () {
       preloadBatch(PRELOAD_BATCH, FRAME_COUNT);
-    }, 3000);
+    }, 500);
 
     window.addEventListener('resize', resize);
 
@@ -259,7 +259,7 @@
   }
 
   /* ============================================================
-     COUNTERS – IntersectionObserver + requestAnimationFrame
+     COUNTERS â€“ IntersectionObserver + requestAnimationFrame
      ============================================================ */
   function initCounters() {
     var statsSection = document.getElementById('stats');
@@ -322,7 +322,7 @@
   }
 
   /* ============================================================
-     FAQ ACCORDION – supporta .open e .active
+     FAQ ACCORDION â€“ supporta .open e .active
      ============================================================ */
   function initFAQ() {
     var items = document.querySelectorAll('.faq-item');
@@ -356,7 +356,7 @@
   }
 
   /* ============================================================
-     GSAP ANIMATIONS – reveal, stagger, clip-path, parallax
+     GSAP ANIMATIONS â€“ reveal, stagger, clip-path, parallax
      ============================================================ */
   function initGSAPAnimations() {
     if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
@@ -697,7 +697,7 @@
   }
 
   /* ============================================================
-     MAGNETIC BUTTONS – inclusi bottoni CTA
+     MAGNETIC BUTTONS â€“ inclusi bottoni CTA
      ============================================================ */
   function initMagneticButtons() {
     if (window.innerWidth < 769) return;
