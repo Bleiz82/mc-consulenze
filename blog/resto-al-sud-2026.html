@@ -21,7 +21,210 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"></noscript>
-  <link rel="stylesheet" href="../css/style.css">
+  <style>/* ============================================================
+   M&C Elaborazioni e Consulenze – style.css UNIFICATO
+   Stili condivisi per TUTTE le pagine del sito
+   ============================================================ */
+
+/* ---------- VARIABILI ---------- */
+:root {
+  --deep: #0f1a2c;
+  --navy: #1a2744;
+  --night: #253044;
+  --accent: #46b9ea;
+  --light-accent: #7dd3fc;
+  --blue-glow: rgba(70, 185, 234, 0.35);
+  --grey: #b2bcc8;
+  --bg-light: #f7f8fc;
+  --white: #ffffff;
+  --text-dark: #3a3f4b;
+  --text-muted: #5a6070;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --transition: 0.3s ease;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; max-width: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--deep);
+  color: var(--grey);
+  line-height: 1.7;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, video, canvas { max-width: 100%; height: auto; display: block; }
+a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--light-accent); }
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--white); line-height: 1.2; }
+::selection { background: var(--accent); color: var(--deep); }
+
+/* ---------- UTILITIES ---------- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.accent { color: var(--accent); }
+
+/* Sezione scura (riferimento homepage) */
+.bg-dark { background: var(--deep); color: var(--grey); }
+.bg-dark h2, .bg-dark h3 { color: var(--white); }
+.bg-dark p { color: var(--grey); }
+.bg-dark .section-label { color: var(--accent); }
+
+/* Sezione chiara */
+.bg-light { background: var(--bg-light); color: var(--text-dark); }
+.bg-light h2, .bg-light h3 { color: var(--deep); }
+.bg-light p { color: var(--text-muted); }
+.bg-light .section-label { color: var(--accent); }
+
+.section { padding: 80px 0; }
+@media(max-width:480px){ .section{padding:60px 0;} }
+
+/* Sezione labels e titoli */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 32px;
+}
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
+}
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+.bg-light .section-title { color: var(--deep); }
+.section-title .accent { color: var(--accent); }
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--grey);
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+.bg-light .section-subtitle { color: var(--text-muted); }
+
+/* Divider */
+.section-divider { padding: 0; display: flex; justify-content: center; }
+.divider-line {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary, .btn-hero, .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px 36px;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.btn-primary, .btn-hero {
+  background: linear-gradient(135deg, var(--accent), #3a9fd4);
+  color: var(--deep) !important;
+  box-shadow: 0 4px 20px rgba(70, 185, 234, 0.3);
+}
+.btn-primary:hover, .btn-hero:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 40px rgba(70, 185, 234, 0.5);
+  color: var(--deep) !important;
+}
+.btn-primary::after, .btn-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+.btn-primary:hover::after, .btn-hero:hover::after { transform: translateX(100%); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent) !important;
+  border: 2px solid var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--deep) !important;
+  transform: translateY(-3px);
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* btn arrow */
+.btn-arrow {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition);
+}
+.btn-primary:hover .btn-arrow,
+.btn-hero:hover .btn-arrow { transform: translateX(4px); }
+
+/* ---------- HEADER UNIFICATO ---------- */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--deep);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+  transition: padding 0.3s ease;
+}
+.site-header.scrolled {
+  padding: 10px 40px;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+}
+.header-logo { display: flex; align-items: center; }
+.header-logo img {
+  height: 44px;
+</style>
+  <link rel="preload" href="../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/style.css"></noscript>
   <link rel="preload" href="../js/libs/gsap.min.js" as="script">
   <link rel="preload" href="../js/libs/ScrollTrigger.min.js" as="script">
   <style>
