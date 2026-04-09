@@ -1,9 +1,0 @@
-# Rimuovi .html dagli URL
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.]+)$ .html [NC,L]
-
-# Redirect da .html a senza estensione
-RewriteCond %{THE_REQUEST} ^GET\ /[^?\s]+\.html
-RewriteRule (.*)\.html$ / [R=301,L]
