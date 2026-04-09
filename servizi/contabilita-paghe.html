@@ -515,6 +515,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--white); 
             <li><a href="../blog.html">Blog</a></li>
             <li><a href="../contatti.html">Contatti</a></li>
             <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../cookie-policy.html">Cookie Policy</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -597,5 +598,133 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--white); 
 <script src="../js/libs/gsap.min.js" defer></script>
 <script src="../js/libs/ScrollTrigger.min.js" defer></script>
 <script src="../js/main.min.js" defer></script>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#0a1628,#0f1a2c);border-top:1px solid rgba(0,212,255,0.2);padding:20px 24px;box-shadow:0 -4px 30px rgba(0,0,0,0.4);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:16px;justify-content:space-between;">
+    <div style="flex:1;min-width:260px;">
+      <p style="color:#fff;font-weight:600;margin-bottom:6px;font-size:0.95rem;">🍪 Questo sito utilizza i cookie</p>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.82rem;line-height:1.6;margin:0;">Utilizziamo cookie tecnici necessari e, previo consenso, cookie analitici e di marketing per migliorare la tua esperienza. <a href="/cookie-policy.html" style="color:#00d4ff;text-decoration:underline;">Cookie Policy</a></p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+      <button id="cookie-settings" style="background:transparent;border:1.5px solid rgba(0,212,255,0.4);color:rgba(255,255,255,0.7);padding:9px 18px;border-radius:25px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;">Personalizza</button>
+      <button id="cookie-reject" style="background:transparent;border:1.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);padding:9px 18px;border-radius:25px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;">Solo necessari</button>
+      <button id="cookie-accept" style="background:linear-gradient(135deg,#00d4ff,#0099cc);border:none;color:#fff;padding:9px 22px;border-radius:25px;font-size:0.82rem;font-weight:600;cursor:pointer;box-shadow:0 4px 15px rgba(0,212,255,0.3);transition:all 0.3s ease;">Accetta tutti</button>
+    </div>
+  </div>
+  <!-- PANNELLO PERSONALIZZA -->
+  <div id="cookie-panel" style="display:none;max-width:1200px;margin:16px auto 0;border-top:1px solid rgba(0,212,255,0.15);padding-top:16px;">
+    <div style="display:flex;flex-wrap:wrap;gap:12px;">
+      <div style="flex:1;min-width:200px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:12px;padding:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="color:#fff;font-weight:600;font-size:0.85rem;">Tecnici</span>
+          <span style="color:#00d4ff;font-size:0.75rem;font-weight:600;">Sempre attivi</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.78rem;margin:0;line-height:1.5;">Necessari per il funzionamento del sito.</p>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:12px;padding:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="color:#fff;font-weight:600;font-size:0.85rem;">Analitici</span>
+          <label style="position:relative;display:inline-block;width:40px;height:22px;cursor:pointer;">
+            <input type="checkbox" id="toggle-analytics" style="opacity:0;width:0;height:0;">
+            <span id="slider-analytics" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.2);border-radius:22px;transition:0.3s;"></span>
+            <span id="knob-analytics" style="position:absolute;top:3px;left:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:0.3s;"></span>
+          </label>
+        </div>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.78rem;margin:0;line-height:1.5;">Google Analytics per statistiche di visita.</p>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.15);border-radius:12px;padding:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <span style="color:#fff;font-weight:600;font-size:0.85rem;">Marketing</span>
+          <label style="position:relative;display:inline-block;width:40px;height:22px;cursor:pointer;">
+            <input type="checkbox" id="toggle-marketing" style="opacity:0;width:0;height:0;">
+            <span id="slider-marketing" style="position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.2);border-radius:22px;transition:0.3s;"></span>
+            <span id="knob-marketing" style="position:absolute;top:3px;left:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:0.3s;"></span>
+          </label>
+        </div>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.78rem;margin:0;line-height:1.5;">Meta Pixel per campagne Facebook/Instagram.</p>
+      </div>
+    </div>
+    <div style="margin-top:14px;text-align:right;">
+      <button id="cookie-save" style="background:linear-gradient(135deg,#00d4ff,#0099cc);border:none;color:#fff;padding:9px 22px;border-radius:25px;font-size:0.82rem;font-weight:600;cursor:pointer;box-shadow:0 4px 15px rgba(0,212,255,0.3);">Salva preferenze</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY='mc_cookie_consent';
+  var banner=document.getElementById('cookie-banner');
+  var panel=document.getElementById('cookie-panel');
+  var consent=null;
+  try{ consent=JSON.parse(localStorage.getItem(KEY)); }catch(e){}
+  
+  function loadAnalytics(){
+    if(document.getElementById('ga-script')) return;
+    // Inserire qui il codice Google Analytics quando disponibile
+    // var s=document.createElement('script');
+    // s.id='ga-script';
+    // s.src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    // s.async=true;
+    // document.head.appendChild(s);
+  }
+  
+  function loadMarketing(){
+    if(document.getElementById('meta-pixel')) return;
+    // Inserire qui il codice Meta Pixel quando disponibile
+    // var s=document.createElement('script');
+    // s.id='meta-pixel';
+    // ...
+  }
+  
+  function applyConsent(c){
+    if(c.analytics) loadAnalytics();
+    if(c.marketing) loadMarketing();
+  }
+  
+  function saveConsent(analytics,marketing){
+    var c={analytics:analytics,marketing:marketing,date:new Date().toISOString()};
+    localStorage.setItem(KEY,JSON.stringify(c));
+    banner.style.display='none';
+    applyConsent(c);
+  }
+  
+  function updateToggle(id,knobId,sliderId,val){
+    var el=document.getElementById(id);
+    var knob=document.getElementById(knobId);
+    var slider=document.getElementById(sliderId);
+    if(el){ el.checked=val; }
+    if(knob){ knob.style.left=val?'21px':'3px'; }
+    if(slider){ slider.style.background=val?'#00d4ff':'rgba(255,255,255,0.2)'; }
+  }
+  
+  if(consent){
+    applyConsent(consent);
+  } else {
+    window.addEventListener('DOMContentLoaded',function(){
+      setTimeout(function(){ banner.style.display='block'; },800);
+    });
+  }
+  
+  document.getElementById('cookie-accept').addEventListener('click',function(){
+    updateToggle('toggle-analytics','knob-analytics','slider-analytics',true);
+    updateToggle('toggle-marketing','knob-marketing','slider-marketing',true);
+    saveConsent(true,true);
+  });
+  
+  document.getElementById('cookie-reject').addEventListener('click',function(){
+    saveConsent(false,false);
+  });
+  
+  document.getElementById('cookie-settings').addEventListener('click',function(){
+    panel.style.display=panel.style.display==='none'?'block':'none';
+  });
+  
+  document.getElementById('cookie-save').addEventListener('click',function(){
+    var a=document.getElementById('toggle-analytics').checked;
+    var m=document.getElementById('toggle-marketing').checked;
+    saveConsent(a,m);
+  });
+})();
+</script>
 </body>
 </html>
