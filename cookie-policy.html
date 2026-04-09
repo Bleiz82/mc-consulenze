@@ -259,6 +259,14 @@
     saveConsent(false,false);
   });
   
+  ['toggle-analytics','toggle-marketing'].forEach(function(id){
+    var input=document.getElementById(id);
+    if(!input) return;
+    var suffix=id.replace('toggle-','');
+    input.addEventListener('change',function(){
+      updateToggle(id,'knob-'+suffix,'slider-'+suffix,this.checked);
+    });
+  });
   document.getElementById('cookie-settings').addEventListener('click',function(){
     panel.style.display=panel.style.display==='none'?'block':'none';
   });
